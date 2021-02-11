@@ -5,14 +5,18 @@ const QuickMenu = (props) => {
   return (
     <section className={styles.quickMenu}>
       <div className={styles.member_info}>
-        <img
-          src="./images/logo.png"
-          alt="member_profile_image"
-          className={styles.profile_image}
-        />
+        <div className={styles.image_border}>
+          <img
+            src="./images/logo.png"
+            alt="member_profile_image"
+            className={styles.profile_image}
+          />
+        </div>
+
         <p className={styles.profile_name}>Con</p>
         <button className={styles.myPage_button}>마이페이지</button>
       </div>
+      <div className={styles.divider}></div>
       <div className={styles.list}>
         <ul>
           <li className={styles.item}>인형</li>

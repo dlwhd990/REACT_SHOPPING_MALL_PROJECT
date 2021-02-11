@@ -7,30 +7,37 @@ const Header = (props) => {
 
   const goHome = () => {
     history.push("/");
+    window.scrollTo({ top: 0 });
   };
 
   const goIntro = () => {
     history.push("/intro");
+    window.scrollTo({ top: 0 });
   };
 
   const goNotice = () => {
     history.push("/notice");
+    window.scrollTo({ top: 0 });
   };
 
   const goItemList = () => {
     history.push("/itemlist");
+    window.scrollTo({ top: 0 });
   };
 
   const goEvent = () => {
     history.push("/event");
+    window.scrollTo({ top: 0 });
   };
 
   const goBBS = () => {
     history.push("/bbs");
+    window.scrollTo({ top: 0 });
   };
 
   const goCustomerCenter = () => {
     history.push("/customer");
+    window.scrollTo({ top: 0 });
   };
 
   return (

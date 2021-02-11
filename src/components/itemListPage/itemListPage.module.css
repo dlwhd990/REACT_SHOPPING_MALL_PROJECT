@@ -1,0 +1,43 @@
+.quickMenu {
+  position: fixed;
+  margin-top: 4.5rem;
+  height: 100vh;
+}
+
+.container {
+  margin: 6.5rem 0 0 17rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 5rem;
+}
+.select_list {
+  display: flex;
+  margin: 3rem 0;
+}
+
+.select {
+  width: 10.5rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-right: 1px solid lightgray;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.select.last {
+  border: none;
+}
+
+.itemlist {
+  display: flex;
+  flex-wrap: wrap;
+}

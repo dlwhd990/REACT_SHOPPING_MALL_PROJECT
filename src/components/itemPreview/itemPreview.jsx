@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./itemPreview.module.css";
 
-const ItemPreview = ({ item }) => {
-  console.log(item);
+const ItemPreview = ({ item, itemView }) => {
+  const onClick = () => {
+    itemView(item);
+  };
+
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={onClick}>
       <div className={styles.image_border}>
         <img className={styles.image} src={item.imageURL} alt="item_image" />
       </div>
