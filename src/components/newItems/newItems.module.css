@@ -1,13 +1,9 @@
-.popular {
+.newItems {
   padding: 3rem;
 }
 
 .info {
-  margin-left: 0.9rem;
-}
-
-.title {
-  margin-bottom: 1rem;
+  margin: 0.9rem;
 }
 
 .list {

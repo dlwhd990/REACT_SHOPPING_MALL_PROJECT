@@ -17,7 +17,7 @@ const StyledSlider = styled(Slider)`
 
 const Image = styled.img`
   width: 100%;
-  height: 30rem;
+  height: 35rem;
 `;
 
 export default class SimpleSlider extends Component {
@@ -32,7 +32,7 @@ export default class SimpleSlider extends Component {
       <Container>
         <StyledSlider {...settings}>
           <div>
-            <Image src="./images/friends.png" alt="" />
+            <Image src="./images/banner.jpg" alt="" />
           </div>
           <div>
             <Image src="./images/friends.png" alt="" />

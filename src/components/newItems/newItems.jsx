@@ -1,13 +1,13 @@
 import React from "react";
 import ItemPreview from "../itemPreview/itemPreview";
-import styles from "./popular.module.css";
+import styles from "./newItems.module.css";
 
-const Popular = ({ items }) => {
+const NewItems = ({ items }) => {
   return (
-    <section className={styles.popular}>
+    <section className={styles.newItems}>
       <div className={styles.info}>
-        <h1 className={styles.title}>👍BEST</h1>
-        <p className={styles.description}>Con's의 인기상품들이에요.</p>
+        <h1 className={styles.title}>🎉New</h1>
+        <p className={styles.description}>꼭! 체크해봐야할 신상들이에요</p>
       </div>
       <div className={styles.list}>
         {Object.keys(items).map((key) => (
@@ -18,4 +18,4 @@ const Popular = ({ items }) => {
   );
 };
 
-export default Popular;
+export default NewItems;
