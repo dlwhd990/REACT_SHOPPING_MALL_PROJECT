@@ -1,0 +1,12 @@
+.popular {
+  padding: 2rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}

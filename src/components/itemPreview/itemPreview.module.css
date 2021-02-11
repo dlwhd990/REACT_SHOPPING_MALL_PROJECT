@@ -1,0 +1,36 @@
+.item {
+  width: 17rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  box-shadow: 1px 3px 5px 1px lightgray;
+  cursor: pointer;
+  transition: transform 150ms ease-in;
+  margin: 1rem;
+}
+
+.item:hover {
+  transform: scale(1.015);
+}
+
+.image_border {
+  padding: 1rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.image {
+  width: 7rem;
+  height: 7rem;
+}
+
+.name {
+  padding-top: 1rem;
+}
+
+.price {
+  padding: 1rem;
+}

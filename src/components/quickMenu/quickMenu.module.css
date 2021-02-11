@@ -1,0 +1,49 @@
+@value color_skyBlue,color_pink,color_white,color_Con from '../../common/colors.css';
+
+.quickMenu {
+  color: color_white;
+  background-color: color_Con;
+  display: flex;
+  width: 15rem;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.profile_image {
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid color_white;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.myPage_button {
+  width: 80%;
+  height: 2rem;
+  font-size: 1.1rem;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.list {
+  width: 100%;
+  padding: 1rem 2.5rem;
+}
+
+.item {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+}

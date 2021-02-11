@@ -1,0 +1,9 @@
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.slider {
+  width: 100%;
+}
