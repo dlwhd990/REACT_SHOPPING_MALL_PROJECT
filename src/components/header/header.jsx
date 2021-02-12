@@ -44,7 +44,7 @@ const Header = (props) => {
     <section className={styles.header}>
       <div className={styles.logo} onClick={goHome}>
         <img
-          src="./images/logo.png"
+          src="../../images/logo.png"
           alt="logo__image"
           className={styles.image}
         />

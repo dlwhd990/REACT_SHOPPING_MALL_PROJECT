@@ -1,8 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import ItemPreview from "../itemPreview/itemPreview";
 import styles from "./popular.module.css";
 
 const Popular = ({ items }) => {
+  const history = useHistory();
+  const itemView = (item) => {
+    history.push(`/itemview/${item.id}`);
+  };
+
   return (
     <section className={styles.popular}>
       <div className={styles.info}>
@@ -11,7 +17,7 @@ const Popular = ({ items }) => {
       </div>
       <div className={styles.list}>
         {Object.keys(items).map((key) => (
-          <ItemPreview key={key} item={items[key]} />
+          <ItemPreview key={key} item={items[key]} itemView={itemView} />
         ))}
       </div>
     </section>

@@ -11,10 +11,7 @@ const ItemListPage = ({ items }) => {
   const filterView = () => {};
 
   const itemView = (item) => {
-    history.push({
-      pathname: "/itemview",
-      state: { item: item },
-    });
+    history.push(`/itemview/${item.id}`);
   };
 
   return (

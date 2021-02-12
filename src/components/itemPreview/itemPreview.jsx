@@ -3,6 +3,7 @@ import styles from "./itemPreview.module.css";
 
 const ItemPreview = ({ item, itemView }) => {
   const onClick = () => {
+    window.scrollTo({ top: 0 });
     itemView(item);
   };
 

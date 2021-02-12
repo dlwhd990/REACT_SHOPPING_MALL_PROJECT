@@ -22,7 +22,7 @@ const App = (props) => {
       price: "10000원",
       description: "세상에서 제일 귀여운 콘 인형이에요!",
       imageName: "logo",
-      imageURL: "./images/logo.png",
+      imageURL: "../../images/logo.png",
     },
 
     2: {
@@ -32,7 +32,7 @@ const App = (props) => {
       price: "8000원",
       description: "라이언도 귀여워요",
       imageName: "logo",
-      imageURL: "./images/ryan.png",
+      imageURL: "../../images/ryan.png",
     },
 
     3: {
@@ -42,7 +42,7 @@ const App = (props) => {
       price: "10000원",
       description: "콧물을 닦아주는 라이언과 튜브에요!",
       imageName: "logo",
-      imageURL: "./images/tube.png",
+      imageURL: "../../images/tube.png",
     },
 
     4: {
@@ -52,7 +52,7 @@ const App = (props) => {
       price: "10000원",
       description: "세상에서 제일 귀여운 콘 인형이에요!",
       imageName: "logo",
-      imageURL: "./images/logo.png",
+      imageURL: "../../images/logo.png",
     },
 
     5: {
@@ -62,7 +62,7 @@ const App = (props) => {
       price: "8000원",
       description: "라이언도 귀여워요",
       imageName: "logo",
-      imageURL: "./images/ryan.png",
+      imageURL: "../../images/ryan.png",
     },
 
     6: {
@@ -72,7 +72,7 @@ const App = (props) => {
       price: "10000원",
       description: "콧물을 닦아주는 라이언과 튜브에요!",
       imageName: "logo",
-      imageURL: "./images/tube.png",
+      imageURL: "../../images/tube.png",
     },
 
     7: {
@@ -82,7 +82,7 @@ const App = (props) => {
       price: "10000원",
       description: "세상에서 제일 귀여운 콘 인형이에요!",
       imageName: "logo",
-      imageURL: "./images/logo.png",
+      imageURL: "../../images/logo.png",
     },
 
     8: {
@@ -92,7 +92,7 @@ const App = (props) => {
       price: "8000원",
       description: "라이언도 귀여워요",
       imageName: "logo",
-      imageURL: "./images/ryan.png",
+      imageURL: "../../images/ryan.png",
     },
 
     9: {
@@ -102,7 +102,17 @@ const App = (props) => {
       price: "10000원",
       description: "콧물을 닦아주는 라이언과 튜브에요!",
       imageName: "logo",
-      imageURL: "./images/tube.png",
+      imageURL: "../../images/tube.png",
+    },
+
+    10: {
+      id: 10,
+      type: "doll",
+      name: "마스크 라이언과 춘식이",
+      price: "29000원",
+      description: "마스크를 착용한 라이언과 춘식이에요",
+      imageName: "1",
+      imageURL: "../../images/pro.jpg",
     },
   });
 
@@ -133,7 +143,7 @@ const App = (props) => {
           <Route exact path="/customer">
             <CustomerCenter />
           </Route>
-          <Route exact path="/itemview">
+          <Route exact path="/itemview/:id">
             <ItemView items={items} />
           </Route>
         </Switch>
