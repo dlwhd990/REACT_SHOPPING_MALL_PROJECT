@@ -1,5 +1,5 @@
 .container {
-  background-color: pink;
+  background-color: lightpink;
   width: 70%;
   height: 45rem;
   margin: auto;
@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5rem;
 }
 
 .name {
@@ -39,5 +40,28 @@
 
 .nameAndPrice {
   width: 100%;
-  padding: 7rem 5rem;
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.5rem;
+}
+
+.options {
+  width: 100%;
+  height: 100%;
+  flex-basis: 70%;
+  background-color: pink;
+  border-radius: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.option {
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.3rem;
+}
+
+.cost {
+  margin-top: 1rem;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../header/header";
 import ItemPreview from "../itemPreview/itemPreview";
@@ -6,9 +6,19 @@ import QuickMenu from "../quickMenu/quickMenu";
 import styles from "./itemListPage.module.css";
 
 const ItemListPage = ({ items }) => {
+  const [filtered, setFiltered] = useState(Object.keys(items));
   const history = useHistory();
 
-  const filterView = () => {};
+  const filterView = (event) => {
+    if (event.target.textContent === "전체") {
+      setFiltered(Object.keys(items));
+    } else {
+      const updated = Object.keys(items).filter(
+        (key) => items[key].type === event.target.textContent
+      );
+      setFiltered(updated);
+    }
+  };
 
   const itemView = (item) => {
     history.push(`/itemview/${item.id}`);
@@ -28,6 +38,11 @@ const ItemListPage = ({ items }) => {
           <ul className={styles.ul}>
             <li>
               <button className={styles.select} onClick={filterView}>
+                전체
+              </button>
+            </li>
+            <li>
+              <button className={styles.select} onClick={filterView}>
                 인형
               </button>
             </li>
@@ -41,11 +56,7 @@ const ItemListPage = ({ items }) => {
                 에어팟 케이스
               </button>
             </li>
-            <li>
-              <button className={styles.select} onClick={filterView}>
-                스마트폰 케이스
-              </button>
-            </li>
+
             <li>
               <button className={styles.select} onClick={filterView}>
                 의류
@@ -72,7 +83,7 @@ const ItemListPage = ({ items }) => {
           </ul>
         </div>
         <div className={styles.itemlist}>
-          {Object.keys(items).map((key) => (
+          {filtered.map((key) => (
             <ItemPreview key={key} item={items[key]} itemView={itemView} />
           ))}
         </div>

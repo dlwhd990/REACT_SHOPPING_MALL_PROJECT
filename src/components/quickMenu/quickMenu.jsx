@@ -19,14 +19,10 @@ const QuickMenu = (props) => {
       <div className={styles.divider}></div>
       <div className={styles.list}>
         <ul>
-          <li className={styles.item}>인형</li>
-          <li className={styles.item}>생활용품</li>
-          <li className={styles.item}>에어팟 케이스</li>
-          <li className={styles.item}>스마트폰 케이스</li>
-          <li className={styles.item}>의류</li>
-          <li className={styles.item}>키링</li>
-          <li className={styles.item}>노트북 파우치</li>
-          <li className={styles.item}>스티커</li>
+          <li className={styles.item}>장바구니</li>
+          <li className={styles.item}>찜 목록</li>
+          <li className={styles.item}>쿠폰</li>
+          <li className={styles.item}>포인트</li>
         </ul>
       </div>
     </section>

@@ -13,7 +13,7 @@ const ItemPreview = ({ item, itemView }) => {
         <img className={styles.image} src={item.imageURL} alt="item_image" />
       </div>
       <h2 className={styles.name}>{item.name}</h2>
-      <h3 className={styles.price}>{item.price}</h3>
+      <h3 className={styles.price}>{`${item.price}원`}</h3>
     </div>
   );
 };
