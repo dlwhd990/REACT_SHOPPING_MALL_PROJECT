@@ -12,6 +12,7 @@ import EventPage from "./components/eventPage/eventPage";
 import CustomerCenter from "./components/customerCenter/customerCenter";
 import Bbs from "./components/BBS/bbs";
 import ItemView from "./components/itemView/itemView";
+import ArticleView from "./components/BBS/articleView/articleView";
 
 const App = (props) => {
   const [items, setItems] = useState({
@@ -21,8 +22,8 @@ const App = (props) => {
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageName: "logo",
       imageURL: "../../images/logo.png",
+      option: ["대", "중", "소"],
     },
 
     2: {
@@ -31,8 +32,8 @@ const App = (props) => {
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageName: "logo",
       imageURL: "../../images/ryan.png",
+      option: ["대", "중", "소"],
     },
 
     3: {
@@ -41,8 +42,8 @@ const App = (props) => {
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageName: "logo",
       imageURL: "../../images/tube.png",
+      option: ["대", "중", "소"],
     },
 
     4: {
@@ -51,8 +52,8 @@ const App = (props) => {
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageName: "logo",
       imageURL: "../../images/logo.png",
+      option: ["대", "중", "소"],
     },
 
     5: {
@@ -61,8 +62,8 @@ const App = (props) => {
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageName: "logo",
       imageURL: "../../images/ryan.png",
+      option: ["대", "중", "소"],
     },
 
     6: {
@@ -71,8 +72,8 @@ const App = (props) => {
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageName: "logo",
       imageURL: "../../images/tube.png",
+      option: ["대", "중", "소"],
     },
 
     7: {
@@ -81,8 +82,8 @@ const App = (props) => {
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageName: "logo",
       imageURL: "../../images/logo.png",
+      option: ["대", "중", "소"],
     },
 
     8: {
@@ -91,8 +92,8 @@ const App = (props) => {
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageName: "logo",
       imageURL: "../../images/ryan.png",
+      option: ["대", "중", "소"],
     },
 
     9: {
@@ -101,18 +102,39 @@ const App = (props) => {
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageName: "logo",
       imageURL: "../../images/tube.png",
+      option: ["대", "중", "소"],
     },
 
     10: {
       id: 10,
-      type: "에어팟 케이스",
+      type: "케이스",
       name: "마스크 라이언과 춘식이",
       price: 29000,
       description: "마스크를 착용한 라이언과 춘식이에요",
-      imageName: "1",
       imageURL: "../../images/pro.jpg",
+      option: ["대", "중", "소"],
+    },
+  });
+
+  const [articles, setArticles] = useState({
+    1: {
+      id: 1,
+      title: "안녕하세요 Cons입니다",
+      content: "안녕하세요 저는 콘입니다 하하하",
+      uploadDate: "2/13",
+      uploadTime: "09:17",
+      uploader: "Con",
+    },
+
+    2: {
+      id: 2,
+      title: "첫글입니다 ",
+      content:
+        "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      uploadDate: "2/16",
+      uploadTime: "14:14",
+      uploader: "Gooms",
     },
   });
 
@@ -138,13 +160,16 @@ const App = (props) => {
             <EventPage />
           </Route>
           <Route exact path="/bbs">
-            <Bbs />
+            <Bbs articles={articles} />
           </Route>
           <Route exact path="/customer">
             <CustomerCenter />
           </Route>
           <Route exact path="/itemview/:id">
             <ItemView items={items} />
+          </Route>
+          <Route exact path="/articleview/:id">
+            <ArticleView articles={articles} />
           </Route>
         </Switch>
       </BrowserRouter>

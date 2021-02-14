@@ -52,6 +52,9 @@ const Header = (props) => {
       </div>
       <div className={styles.menu}>
         <ul className={styles.list}>
+          <li className={styles.item} onClick={goHome}>
+            홈
+          </li>
           <li className={styles.item} onClick={goIntro}>
             소개
           </li>

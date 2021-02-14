@@ -22,17 +22,16 @@ const ItemView = ({ items }) => {
           <div className={styles.options}>
             <h3>옵션1</h3>
             <select name="option1" id="" className={styles.option}>
-              <option value="콘!!">콘!!</option>
-              <option value="콘!!">콘!!</option>
-              <option value="콘!!">콘!!</option>
-              <option value="콘!!">콘!!</option>
+              {items[id].option.map((item) => (
+                <option key={item}>{item}</option>
+              ))}
             </select>
             <h3>옵션2</h3>
             <select name="option2" id="" className={styles.option}>
               <option value="굼스!!">굼스!!</option>
-              <option value="굼스!!">굼스!!</option>
-              <option value="굼스!!">굼스!!</option>
-              <option value="굼스!!">굼스!!</option>
+              <option value="굼스!!">짱스!!</option>
+              <option value="굼스!!">밥스!!</option>
+              <option value="굼스!!">옹스!!</option>
             </select>
             <h2 className={styles.cost}>합계</h2>
             <h1>{`${items[id].price}원`}</h1>

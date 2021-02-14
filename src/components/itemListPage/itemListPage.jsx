@@ -53,7 +53,7 @@ const ItemListPage = ({ items }) => {
             </li>
             <li>
               <button className={styles.select} onClick={filterView}>
-                에어팟 케이스
+                케이스
               </button>
             </li>
 
@@ -69,7 +69,7 @@ const ItemListPage = ({ items }) => {
             </li>
             <li>
               <button className={styles.select} onClick={filterView}>
-                노트북 파우치
+                파우치
               </button>
             </li>
             <li>

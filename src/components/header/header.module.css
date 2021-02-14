@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 2rem;
   color: color_white;
   background-color: color_skyBlue;
   position: fixed;
@@ -28,7 +28,7 @@
 }
 
 .menu {
-  margin-left: 23%;
+  margin-left: 21%;
 }
 
 .list {
