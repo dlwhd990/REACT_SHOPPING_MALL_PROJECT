@@ -7,19 +7,38 @@
 
 .container {
   border: 1px solid black;
-  width: 65%;
-  height: 90vh;
+  width: 45%;
+  height: 90%;
+  padding: 2rem;
 }
 
-.info {
-  border-bottom: 1px solid black;
-  padding: 0.5rem;
+.userdata {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.userImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
+
+.textdata {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.uploadTime {
+  color: rgb(146, 142, 142);
+  width: 10rem;
 }
 
 .title {
-  margin-bottom: 0.5rem;
-}
-
-.time {
-  right: 0;
+  margin-bottom: 1rem;
 }

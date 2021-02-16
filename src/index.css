@@ -10,6 +10,13 @@ code {
     monospace;
 }
 
+textarea,
+input,
+button,
+select {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }

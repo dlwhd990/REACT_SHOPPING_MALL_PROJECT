@@ -8,13 +8,21 @@ const ArticleView = ({ articles }) => {
   return (
     <section className={styles.articleView}>
       <div className={styles.container}>
-        <div className={styles.info}>
-          <h2 className={styles.title}>{articles[id].title}</h2>
-          <span className={styles.uploader}>{articles[id].uploader}</span>
-          <span className={styles.uploadDate}>{articles[id].uploadDate}</span>
+        <div className={styles.userdata}>
+          <img
+            src="../../images/default.png"
+            alt=""
+            className={styles.userImage}
+          />
+          <div className={styles.textdata}>
+            <h3 className={styles.uploader}>{articles[id].uploader}</h3>
+            <span
+              className={styles.uploadTime}
+            >{`${articles[id].uploadDate} ${articles[id].uploadTime}`}</span>
+          </div>
         </div>
-
-        <h3>{articles[id].content}</h3>
+        <h2 className={styles.title}>{articles[id].title}</h2>
+        <p className={styles.content}>{articles[id].content}</p>
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ import CustomerCenter from "./components/customerCenter/customerCenter";
 import Bbs from "./components/BBS/bbs";
 import ItemView from "./components/itemView/itemView";
 import ArticleView from "./components/BBS/articleView/articleView";
+import Write from "./components/BBS/write/write";
 
 const App = (props) => {
   const [items, setItems] = useState({
@@ -121,7 +122,8 @@ const App = (props) => {
     1: {
       id: 1,
       title: "안녕하세요 Cons입니다",
-      content: "안녕하세요 저는 콘입니다 하하하",
+      content:
+        "안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 ",
       uploadDate: "2/13",
       uploadTime: "09:17",
       uploader: "Con",
@@ -137,6 +139,15 @@ const App = (props) => {
       uploader: "Gooms",
     },
   });
+
+  const uploadArticle = (newArticle) => {
+    window.scrollTo({ top: 0 });
+    setArticles((articles) => {
+      const updated = { ...articles };
+      updated[newArticle.id] = newArticle;
+      return updated;
+    });
+  };
 
   return (
     <div className={styles.app}>
@@ -170,6 +181,9 @@ const App = (props) => {
           </Route>
           <Route exact path="/articleview/:id">
             <ArticleView articles={articles} />
+          </Route>
+          <Route exact path="/writearticle">
+            <Write uploadArticle={uploadArticle} />
           </Route>
         </Switch>
       </BrowserRouter>

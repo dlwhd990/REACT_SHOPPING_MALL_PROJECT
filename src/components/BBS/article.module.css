@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.article:hover {
+  background-color: rgb(243, 239, 239);
+}
+
 .title {
   padding-left: 1rem;
 }

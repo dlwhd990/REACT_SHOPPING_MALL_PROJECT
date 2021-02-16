@@ -1,5 +1,5 @@
 .container {
-  width: 40%;
+  width: 45%;
   height: 82vh;
   margin: auto;
   margin-top: 8rem;
@@ -31,7 +31,8 @@
   font-weight: 600;
   outline: none;
   background-color: lightgray;
-  border: none;
+  border: lightgray;
+  border-radius: 2px;
   cursor: pointer;
 }
 
