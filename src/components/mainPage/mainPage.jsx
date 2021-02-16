@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NewItems from "../newItems/newItems";
 import Popular from "../popular/popular";
 import QuickMenu from "../quickMenu/quickMenu";

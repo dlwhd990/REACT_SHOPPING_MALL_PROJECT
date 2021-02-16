@@ -1,8 +1,5 @@
-.popular {
-  padding: 3rem;
-}
-
 .info {
+  padding: 3rem 0 0 3rem;
   margin-left: 0.9rem;
 }
 
@@ -13,4 +10,5 @@
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }

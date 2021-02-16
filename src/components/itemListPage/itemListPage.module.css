@@ -4,26 +4,30 @@
   height: 100vh;
 }
 
+.title {
+  padding: 2rem 0 0 2rem;
+}
+
 .container {
-  margin: 6.5rem 0 0 17rem;
+  margin: 4.5rem 0 0 15rem;
   display: flex;
   flex-direction: column;
 }
 
 .ul {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-left: 5rem;
+  justify-content: center;
 }
 .select_list {
-  display: flex;
   margin: 3rem 0;
 }
 
 .select {
-  width: 10.5rem;
-  padding: 0.5rem 0;
+  width: 100%;
+  padding: 0.5rem 2.5rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -40,4 +44,5 @@
 .itemlist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
