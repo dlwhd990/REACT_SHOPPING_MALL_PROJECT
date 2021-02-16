@@ -1,0 +1,25 @@
+.articleView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  border: 1px solid black;
+  width: 65%;
+  height: 90vh;
+}
+
+.info {
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.time {
+  right: 0;
+}

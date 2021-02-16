@@ -4,10 +4,18 @@ import { useParams } from "react-router-dom";
 
 const ArticleView = ({ articles }) => {
   const { id } = useParams();
-  console.log(articles[id]);
+
   return (
     <section className={styles.articleView}>
-      <h1>{articles[id].title}</h1>
+      <div className={styles.container}>
+        <div className={styles.info}>
+          <h2 className={styles.title}>{articles[id].title}</h2>
+          <span className={styles.uploader}>{articles[id].uploader}</span>
+          <span className={styles.uploadDate}>{articles[id].uploadDate}</span>
+        </div>
+
+        <h3>{articles[id].content}</h3>
+      </div>
     </section>
   );
 };
