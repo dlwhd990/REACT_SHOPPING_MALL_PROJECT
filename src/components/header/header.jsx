@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = (props) => {
+const Header = ({ islogin, logout }) => {
   const history = useHistory();
 
   const goHome = () => {
@@ -45,6 +45,15 @@ const Header = (props) => {
     window.scrollTo({ top: 0 });
   };
 
+  const goLogout = () => {
+    logout();
+  };
+
+  const goMyPage = () => {
+    history.push("/mypage");
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <section className={styles.header}>
       <div className={styles.logo} onClick={goHome}>
@@ -78,9 +87,24 @@ const Header = (props) => {
           고객지원
         </li>
       </ul>
-      <div className={styles.button}>
-        <button className={styles.loginButton} onClick={goLogin}>
-          로그인
+      <button
+        className={`${styles.loginButton} ${
+          islogin ? styles.onlogin : styles.onlogout
+        }`}
+        onClick={goLogin}
+      >
+        로그인
+      </button>
+      <div
+        className={`${styles.logedin} ${
+          islogin ? styles.onlogin : styles.onlogout
+        }`}
+      >
+        <button className={styles.mypage} onClick={goMyPage}>
+          마이페이지
+        </button>
+        <button className={styles.logoutButton} onClick={goLogout}>
+          로그아웃
         </button>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./app.module.css";
 import Header from "./components/header/header";
 import MainPage from "./components/mainPage/mainPage";
@@ -15,8 +15,9 @@ import ItemView from "./components/itemView/itemView";
 import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
+import SignUp from "./components/signup/signUp";
 
-const App = ({ authService }) => {
+const App = ({ authService, userDataRepository }) => {
   const [items, setItems] = useState({
     1: {
       id: 1,
@@ -119,7 +120,11 @@ const App = ({ authService }) => {
     },
   });
 
+  const [islogin, setIslogin] = useState(false);
+
   const [articles, setArticles] = useState({});
+
+  const [id, setId] = useState(null);
 
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
@@ -130,10 +135,25 @@ const App = ({ authService }) => {
     });
   };
 
+  const logout = () => {
+    authService.logout();
+    setIslogin(false);
+    window.scrollTo({ top: 0 });
+  };
+
+  const isLogin = (check) => {
+    check ? setIslogin(true) : setIslogin(false);
+    check ? setId(check) : setId(null);
+  };
+
+  const onSignUp = (newUser) => {
+    userDataRepository.saveUserData(id, newUser);
+  };
+
   return (
     <div className={styles.app}>
       <BrowserRouter>
-        <Header />
+        <Header islogin={islogin} logout={logout} />
         <Switch>
           <Route exact path="/">
             <MainPage items={items} />
@@ -167,7 +187,14 @@ const App = ({ authService }) => {
             <Write uploadArticle={uploadArticle} />
           </Route>
           <Route exact path="/login">
-            <Login authService={authService} />
+            <Login
+              authService={authService}
+              isLogin={isLogin}
+              userDataRepository={userDataRepository}
+            />
+          </Route>
+          <Route exact path="/signup">
+            <SignUp onSignUp={onSignUp} />
           </Route>
         </Switch>
       </BrowserRouter>
