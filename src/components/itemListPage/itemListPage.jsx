@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Header from "../header/header";
 import ItemPreview from "../itemPreview/itemPreview";
 import QuickMenu from "../quickMenu/quickMenu";
 import styles from "./itemListPage.module.css";
@@ -26,9 +25,6 @@ const ItemListPage = ({ items }) => {
 
   return (
     <section className={styles.itemListPage}>
-      <div className={styles.header}>
-        <Header />
-      </div>
       <div className={styles.quickMenu}>
         <QuickMenu />
       </div>

@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "../header/header";
 import styles from "./eventPage.module.css";
 
 const EventPage = (props) => {
   return (
     <div className={styles.eventPage}>
-      <Header />
+      <h1>event</h1>
     </div>
   );
 };

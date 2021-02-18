@@ -18,11 +18,17 @@ const ArticleView = ({ articles }) => {
             <h3 className={styles.uploader}>{articles[id].uploader}</h3>
             <span
               className={styles.uploadTime}
-            >{`${articles[id].uploadDate} ${articles[id].uploadTime}`}</span>
+            >{`${articles[id].uploadDate}  ${articles[id].uploadTime}`}</span>
           </div>
         </div>
         <h2 className={styles.title}>{articles[id].title}</h2>
         <p className={styles.content}>{articles[id].content}</p>
+        <div className={styles.evaluation}>
+          <button className={styles.likeButton}>
+            <i className="far fa-thumbs-up"></i>
+          </button>
+          <span className={styles.likeCount}>0</span>
+        </div>
       </div>
     </section>
   );

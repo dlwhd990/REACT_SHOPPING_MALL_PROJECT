@@ -1,7 +1,6 @@
 import React from "react";
 import NewItems from "../newItems/newItems";
 import Popular from "../popular/popular";
-import QuickMenu from "../quickMenu/quickMenu";
 import SimpleSlider from "../slider/slider";
 import styles from "./mainPage.module.css";
 

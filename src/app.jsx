@@ -118,27 +118,7 @@ const App = (props) => {
     },
   });
 
-  const [articles, setArticles] = useState({
-    1: {
-      id: 1,
-      title: "안녕하세요 Cons입니다",
-      content:
-        "안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 안녕하세요 저는 콘입니다 하하하 ",
-      uploadDate: "2/13",
-      uploadTime: "09:17",
-      uploader: "Con",
-    },
-
-    2: {
-      id: 2,
-      title: "첫글입니다 ",
-      content:
-        "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-      uploadDate: "2/16",
-      uploadTime: "14:14",
-      uploader: "Gooms",
-    },
-  });
+  const [articles, setArticles] = useState({});
 
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
@@ -152,9 +132,9 @@ const App = (props) => {
   return (
     <div className={styles.app}>
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route exact path="/">
-            <Header />
             <MainPage items={items} />
             <Footer />
           </Route>

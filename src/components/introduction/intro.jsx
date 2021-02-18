@@ -1,13 +1,9 @@
 import React from "react";
-import Header from "../header/header";
 import styles from "./intro.module.css";
 
 const Intro = (props) => {
   return (
     <section className={styles.intro}>
-      <div className={styles.header}>
-        <Header />
-      </div>
       <section className={styles.container}>
         <div className={styles.top}>
           <img

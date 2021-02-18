@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = (props) => {
+const Header = ({ authService }) => {
   const history = useHistory();
 
   const goHome = () => {
@@ -50,30 +50,31 @@ const Header = (props) => {
         />
         <h1 className={styles.title}>Con's</h1>
       </div>
-      <div className={styles.menu}>
-        <ul className={styles.list}>
-          <li className={styles.item} onClick={goHome}>
-            홈
-          </li>
-          <li className={styles.item} onClick={goIntro}>
-            소개
-          </li>
-          <li className={styles.item} onClick={goNotice}>
-            공지사항
-          </li>
-          <li className={styles.item} onClick={goItemList}>
-            상품리스트
-          </li>
-          <li className={styles.item} onClick={goEvent}>
-            이벤트
-          </li>
-          <li className={styles.item} onClick={goBBS}>
-            게시판
-          </li>
-          <li className={styles.item} onClick={goCustomerCenter}>
-            고객지원
-          </li>
-        </ul>
+      <ul className={styles.list}>
+        <li className={styles.item} onClick={goHome}>
+          홈
+        </li>
+        <li className={styles.item} onClick={goIntro}>
+          소개
+        </li>
+        <li className={styles.item} onClick={goNotice}>
+          공지사항
+        </li>
+        <li className={styles.item} onClick={goItemList}>
+          상품리스트
+        </li>
+        <li className={styles.item} onClick={goEvent}>
+          이벤트
+        </li>
+        <li className={styles.item} onClick={goBBS}>
+          게시판
+        </li>
+        <li className={styles.item} onClick={goCustomerCenter}>
+          고객지원
+        </li>
+      </ul>
+      <div className={styles.button}>
+        <button className={styles.loginButton}>로그인</button>
       </div>
     </section>
   );

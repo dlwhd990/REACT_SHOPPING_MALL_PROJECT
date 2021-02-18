@@ -5,8 +5,8 @@
   height: 4.5rem;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  padding: 0.2rem 2rem;
   color: color_white;
   background-color: color_skyBlue;
   position: fixed;
@@ -14,6 +14,7 @@
 }
 
 .logo {
+  padding-left: 3rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -27,33 +28,42 @@
   margin-left: 0.5rem;
 }
 
-.menu {
-  margin-left: 21%;
-}
-
 .list {
   display: flex;
+  white-space: nowrap;
 }
 
 .item {
-  padding: 0.5rem 2rem;
+  margin: 0.5rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 0.5rem;
-  transition: all 100ms ease-in;
 }
 
-@media screen and (max-width: 1000px) {
+.button {
+  padding-right: 7rem;
+}
+
+.loginButton {
+  background-color: transparent;
+  border: 4px solid white;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 49rem) {
   .header {
     flex-direction: column;
   }
 
-  .menu {
-    margin: 0;
-  }
-
   .list {
+    position: static;
     flex-direction: column;
     align-items: center;
   }

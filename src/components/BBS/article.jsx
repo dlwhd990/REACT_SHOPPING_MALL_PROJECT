@@ -9,13 +9,19 @@ const Article = ({ article }) => {
     window.scrollTo({ top: 0 });
     history.push(`/articleview/${article.id}`);
   };
+  let convertedTitle;
+  if (article.title.length > 35) {
+    convertedTitle = article.title.slice(0, 35) + "...";
+  } else {
+    convertedTitle = article.title;
+  }
 
   return (
     <section className={styles.article} onClick={viewArticle}>
-      <span className={styles.title}>{article.title}</span>
+      <span className={styles.title}>{convertedTitle}</span>
       <div className={styles.data}>
         <div className={styles.time}>
-          <span>{article.uploadDate}</span>
+          <span>{`${article.uploadDate} ${article.uploadTime}`}</span>
         </div>
         <div className={styles.name}>
           <span>{article.uploader}</span>

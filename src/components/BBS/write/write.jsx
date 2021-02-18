@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
-import Header from "../../header/header";
 import styles from "./write.module.css";
 
 const Write = ({ uploadArticle }) => {
@@ -34,32 +33,29 @@ const Write = ({ uploadArticle }) => {
 
   return (
     <section className={styles.write}>
-      <Header />
-      <div className={styles.container}>
-        <form className={styles.writeform}>
-          <p>
-            <input
-              ref={titleRef}
-              name="text"
-              className={styles.titleInput}
-              placeholder="제목"
-            />
-          </p>
-          <p>
-            <textarea
-              ref={contentRef}
-              name="text"
-              className={styles.contentInput}
-              placeholder="내용"
-            />
-          </p>
-        </form>
-        <div className={styles.buttons}>
-          <button className={styles.imageUpload}>이미지</button>
-          <button className={styles.upload} onClick={upload}>
-            글 작성
-          </button>
-        </div>
+      <form className={styles.writeform}>
+        <p>
+          <input
+            ref={titleRef}
+            name="text"
+            className={styles.titleInput}
+            placeholder="제목"
+          />
+        </p>
+        <p>
+          <textarea
+            ref={contentRef}
+            name="text"
+            className={styles.contentInput}
+            placeholder="내용"
+          />
+        </p>
+      </form>
+      <div className={styles.buttons}>
+        <button className={styles.imageUpload}>이미지</button>
+        <button className={styles.upload} onClick={upload}>
+          글 작성
+        </button>
       </div>
     </section>
   );
