@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
-import Header from "./components/header/header";
+
 import "@fortawesome/fontawesome-free/js/all.js";
+import AuthService from "./sevice/auth_service";
+
+const authService = new AuthService();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App authService={authService} />
   </React.StrictMode>,
   document.getElementById("root")
 );

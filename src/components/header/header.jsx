@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = ({ authService }) => {
+const Header = (props) => {
   const history = useHistory();
 
   const goHome = () => {
@@ -40,6 +40,11 @@ const Header = ({ authService }) => {
     window.scrollTo({ top: 0 });
   };
 
+  const goLogin = () => {
+    history.push("/login");
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <section className={styles.header}>
       <div className={styles.logo} onClick={goHome}>
@@ -74,7 +79,9 @@ const Header = ({ authService }) => {
         </li>
       </ul>
       <div className={styles.button}>
-        <button className={styles.loginButton}>로그인</button>
+        <button className={styles.loginButton} onClick={goLogin}>
+          로그인
+        </button>
       </div>
     </section>
   );

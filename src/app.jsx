@@ -14,8 +14,9 @@ import Bbs from "./components/BBS/bbs";
 import ItemView from "./components/itemView/itemView";
 import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
+import Login from "./components/login/login";
 
-const App = (props) => {
+const App = ({ authService }) => {
   const [items, setItems] = useState({
     1: {
       id: 1,
@@ -164,6 +165,9 @@ const App = (props) => {
           </Route>
           <Route exact path="/writearticle">
             <Write uploadArticle={uploadArticle} />
+          </Route>
+          <Route exact path="/login">
+            <Login authService={authService} />
           </Route>
         </Switch>
       </BrowserRouter>
