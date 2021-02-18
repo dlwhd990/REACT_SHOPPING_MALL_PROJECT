@@ -19,4 +19,4 @@ class ArticleRepository {
   }
 }
 
-export default UserDataRepository;
+export default ArticleRepository;

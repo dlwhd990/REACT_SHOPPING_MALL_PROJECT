@@ -10,12 +10,9 @@ class UserDataRepository {
 
   checkUserData(id) {
     const ref = firebaseApp.database().ref(`userdata/${id}`);
-    let check;
-    ref.on("value", (item) => {
-      const value = item.val();
-      check = value;
+    ref.once("value", (snapshot) => {
+      snapshot.val() && console.log(snapshot.val());
     });
-    return check;
   }
 }
 

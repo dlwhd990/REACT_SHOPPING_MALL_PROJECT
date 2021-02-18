@@ -17,7 +17,7 @@ import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
 import SignUp from "./components/signup/signUp";
 
-const App = ({ authService, userDataRepository }) => {
+const App = ({ authService, userDataRepository, articleRepository }) => {
   const [items, setItems] = useState({
     1: {
       id: 1,
@@ -133,6 +133,7 @@ const App = ({ authService, userDataRepository }) => {
       updated[newArticle.id] = newArticle;
       return updated;
     });
+    articleRepository.saveArticle(newArticle.id, newArticle);
   };
 
   const logout = () => {
@@ -149,6 +150,13 @@ const App = ({ authService, userDataRepository }) => {
   const onSignUp = (newUser) => {
     userDataRepository.saveUserData(id, newUser);
   };
+
+  useEffect(() => {
+    const stopSync = articleRepository.setArticles((articles) => {
+      setArticles(articles);
+    });
+    return () => stopSync();
+  }, []);
 
   return (
     <div className={styles.app}>
@@ -184,7 +192,10 @@ const App = ({ authService, userDataRepository }) => {
             <ArticleView articles={articles} />
           </Route>
           <Route exact path="/writearticle">
-            <Write uploadArticle={uploadArticle} />
+            <Write
+              uploadArticle={uploadArticle}
+              userDataRepository={userDataRepository}
+            />
           </Route>
           <Route exact path="/login">
             <Login

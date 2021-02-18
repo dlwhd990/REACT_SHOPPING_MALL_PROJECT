@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./write.module.css";
 
-const Write = ({ uploadArticle }) => {
+const Write = ({ uploadArticle, userDataRepository }) => {
   const titleRef = useRef();
   const contentRef = useRef();
   const history = useHistory();
