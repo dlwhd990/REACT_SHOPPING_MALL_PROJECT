@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./login.module.css";
 
-const Login = ({ authService, isLogin, userDataRepository }) => {
+const Login = ({ authService, userDataRepository, loginCheck }) => {
   const history = useHistory();
 
   const afterLogin = (userId) => {
+    loginCheck();
+    userDataRepository.checkUserData(userId);
     history.push("/");
-    isLogin(userId);
-    const check = userDataRepository.checkUserData(userId);
-    if (!check) {
-      history.push("/signup");
-    }
   };
 
   const onLogin = () => {

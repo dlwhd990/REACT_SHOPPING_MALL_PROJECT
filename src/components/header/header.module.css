@@ -55,6 +55,7 @@
 }
 
 .logedin {
+  white-space: nowrap;
   display: none;
   margin-right: 1rem;
 }

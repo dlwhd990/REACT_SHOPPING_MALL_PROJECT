@@ -15,7 +15,6 @@ import ItemView from "./components/itemView/itemView";
 import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
-import SignUp from "./components/signup/signUp";
 
 const App = ({ authService, userDataRepository, articleRepository }) => {
   const [items, setItems] = useState({
@@ -120,11 +119,9 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     },
   });
 
-  const [islogin, setIslogin] = useState(false);
-
   const [articles, setArticles] = useState({});
 
-  const [id, setId] = useState(null);
+  const [check, setCheck] = useState(false);
 
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
@@ -138,30 +135,31 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
 
   const logout = () => {
     authService.logout();
-    setIslogin(false);
     window.scrollTo({ top: 0 });
   };
 
-  const isLogin = (check) => {
-    check ? setIslogin(true) : setIslogin(false);
-    check ? setId(check) : setId(null);
-  };
-
-  const onSignUp = (newUser) => {
-    userDataRepository.saveUserData(id, newUser);
+  const loginCheck = () => {
+    setCheck(!check);
   };
 
   useEffect(() => {
-    const stopSync = articleRepository.setArticles((articles) => {
+    const stopSync = articleRepository.settingArticles((articles) => {
       setArticles(articles);
     });
     return () => stopSync();
   }, []);
 
+  console.log(authService.check());
+
   return (
     <div className={styles.app}>
       <BrowserRouter>
-        <Header islogin={islogin} logout={logout} />
+        <Header
+          authService={authService}
+          logout={logout}
+          check={check}
+          loginCheck={loginCheck}
+        />
         <Switch>
           <Route exact path="/">
             <MainPage items={items} />
@@ -192,20 +190,14 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <ArticleView articles={articles} />
           </Route>
           <Route exact path="/writearticle">
-            <Write
-              uploadArticle={uploadArticle}
-              userDataRepository={userDataRepository}
-            />
+            <Write uploadArticle={uploadArticle} authService={authService} />
           </Route>
           <Route exact path="/login">
             <Login
               authService={authService}
-              isLogin={isLogin}
               userDataRepository={userDataRepository}
+              loginCheck={loginCheck}
             />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp onSignUp={onSignUp} />
           </Route>
         </Switch>
       </BrowserRouter>

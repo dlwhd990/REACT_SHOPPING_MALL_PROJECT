@@ -33,6 +33,11 @@
   margin-left: 1rem;
 }
 
+.button {
+  position: relative;
+  right: 0;
+}
+
 .uploadTime {
   color: rgb(146, 142, 142);
   width: 10rem;

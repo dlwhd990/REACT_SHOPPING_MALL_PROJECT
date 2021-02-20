@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = ({ islogin, logout }) => {
+const Header = ({ loginCheck, check, logout }) => {
   const history = useHistory();
 
   const goHome = () => {
@@ -46,6 +46,7 @@ const Header = ({ islogin, logout }) => {
   };
 
   const goLogout = () => {
+    loginCheck();
     logout();
   };
 
@@ -89,7 +90,7 @@ const Header = ({ islogin, logout }) => {
       </ul>
       <button
         className={`${styles.loginButton} ${
-          islogin ? styles.onlogin : styles.onlogout
+          check ? styles.onlogin : styles.onlogout
         }`}
         onClick={goLogin}
       >
@@ -97,7 +98,7 @@ const Header = ({ islogin, logout }) => {
       </button>
       <div
         className={`${styles.logedin} ${
-          islogin ? styles.onlogin : styles.onlogout
+          check ? styles.onlogin : styles.onlogout
         }`}
       >
         <button className={styles.mypage} onClick={goMyPage}>

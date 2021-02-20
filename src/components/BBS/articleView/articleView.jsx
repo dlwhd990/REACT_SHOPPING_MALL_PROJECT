@@ -20,6 +20,7 @@ const ArticleView = ({ articles }) => {
               className={styles.uploadTime}
             >{`${articles[id].uploadDate}  ${articles[id].uploadTime}`}</span>
           </div>
+          <button className={styles.deleteButton}>삭제</button>
         </div>
         <h2 className={styles.title}>{articles[id].title}</h2>
         <p className={styles.content}>{articles[id].content}</p>
