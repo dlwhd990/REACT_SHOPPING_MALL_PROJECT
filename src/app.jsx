@@ -119,7 +119,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     },
   });
 
-  const [articles, setArticles] = useState({});
+  const [articles, setArticles] = useState(null);
 
   const [check, setCheck] = useState(false);
 
@@ -141,6 +141,12 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
   const loginCheck = () => {
     setCheck(!check);
   };
+
+  useEffect(() => {
+    console.log(1);
+    setCheck(authService.check());
+    console.log(check);
+  }, [check]);
 
   useEffect(() => {
     const stopSync = articleRepository.settingArticles((articles) => {
@@ -178,7 +184,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <EventPage />
           </Route>
           <Route exact path="/bbs">
-            <Bbs articles={articles} />
+            {articles && <Bbs articles={articles} />}
           </Route>
           <Route exact path="/customer">
             <CustomerCenter />
@@ -187,7 +193,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <ItemView items={items} />
           </Route>
           <Route exact path="/articleview/:id">
-            <ArticleView articles={articles} />
+            {articles && <ArticleView articles={articles} />}
           </Route>
           <Route exact path="/writearticle">
             <Write uploadArticle={uploadArticle} authService={authService} />

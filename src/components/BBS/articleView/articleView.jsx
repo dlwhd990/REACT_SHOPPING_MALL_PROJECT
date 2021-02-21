@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const ArticleView = ({ articles }) => {
   const { id } = useParams();
-
+  console.log(articles);
   return (
     <section className={styles.articleView}>
       <div className={styles.container}>
