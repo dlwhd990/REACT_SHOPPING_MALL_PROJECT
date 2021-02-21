@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import Article from "./article";
 import styles from "./bbs.module.css";
 
-const Bbs = ({ articles }) => {
+const Bbs = ({ articles, authService }) => {
   const history = useHistory();
   const write = () => {
-    window.scrollTo({ top: 0 });
-    history.push("/writearticle");
+    const user = authService.check();
+    if (user) {
+      window.scrollTo({ top: 0 });
+      history.push("/writearticle");
+    } else {
+      window.alert("로그인 하셔야 글 작성이 가능합니다.");
+    }
   };
   const articleList = Object.keys(articles).reverse();
 

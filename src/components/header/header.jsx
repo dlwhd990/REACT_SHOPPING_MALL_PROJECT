@@ -2,8 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = ({ loginCheck, check, logout }) => {
+const Header = ({ logout, authService }) => {
   const history = useHistory();
+
+  const [check, setCheck] = useState(false);
+
+  const loginCheck = () => {
+    setCheck(!check);
+  };
+
+  useEffect(() => {
+    setCheck(authService.check());
+  });
 
   const goHome = () => {
     history.push("/");

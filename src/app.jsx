@@ -121,7 +121,14 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
 
   const [articles, setArticles] = useState(null);
 
-  const [check, setCheck] = useState(false);
+  const [loginCheck, setLoginCheck] = useState(false);
+
+  const [inherenceId, setInherenceId] = useState(null);
+
+  const pressLoginButton = (id) => {
+    setInherenceId(id);
+    setLoginCheck(!loginCheck);
+  };
 
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
@@ -135,18 +142,9 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
 
   const logout = () => {
     authService.logout();
-    window.scrollTo({ top: 0 });
+    setInherenceId(null);
+    window.location.reload();
   };
-
-  const loginCheck = () => {
-    setCheck(!check);
-  };
-
-  useEffect(() => {
-    console.log(1);
-    setCheck(authService.check());
-    console.log(check);
-  }, [check]);
 
   useEffect(() => {
     const stopSync = articleRepository.settingArticles((articles) => {
@@ -163,8 +161,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
         <Header
           authService={authService}
           logout={logout}
-          check={check}
-          loginCheck={loginCheck}
+          logincheck={loginCheck}
         />
         <Switch>
           <Route exact path="/">
@@ -184,7 +181,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <EventPage />
           </Route>
           <Route exact path="/bbs">
-            {articles && <Bbs articles={articles} />}
+            {articles && <Bbs articles={articles} authService={authService} />}
           </Route>
           <Route exact path="/customer">
             <CustomerCenter />
@@ -193,7 +190,13 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <ItemView items={items} />
           </Route>
           <Route exact path="/articleview/:id">
-            {articles && <ArticleView articles={articles} />}
+            {articles && (
+              <ArticleView
+                articles={articles}
+                userDataRepository={userDataRepository}
+                inherenceId={inherenceId}
+              />
+            )}
           </Route>
           <Route exact path="/writearticle">
             <Write uploadArticle={uploadArticle} authService={authService} />
@@ -202,7 +205,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <Login
               authService={authService}
               userDataRepository={userDataRepository}
-              loginCheck={loginCheck}
+              pressLoginButton={pressLoginButton}
             />
           </Route>
         </Switch>

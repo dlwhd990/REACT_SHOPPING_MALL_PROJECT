@@ -2,11 +2,11 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./login.module.css";
 
-const Login = ({ authService, userDataRepository, loginCheck }) => {
+const Login = ({ pressLoginButton, authService, userDataRepository }) => {
   const history = useHistory();
 
   const afterLogin = (userId) => {
-    loginCheck();
+    pressLoginButton();
     userDataRepository.checkUserData(userId);
     history.push("/");
   };
@@ -14,7 +14,7 @@ const Login = ({ authService, userDataRepository, loginCheck }) => {
   const onLogin = () => {
     authService //
       .login()
-      .then((data) => afterLogin(data.user.uid));
+      .then((data) => data && afterLogin(data.user.uid));
   };
 
   return (
