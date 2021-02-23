@@ -12,7 +12,6 @@ const signUp = (userId, userName) => {
 };
 
 function setCheck(userId, value) {
-  console.log(userId, value);
   if (!value) {
     const user = authService.check();
 

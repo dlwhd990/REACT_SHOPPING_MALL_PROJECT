@@ -13,22 +13,27 @@ const Write = ({ uploadArticle, authService }) => {
     let hour = new Date().getHours();
     let minutes = new Date().getMinutes();
     month++;
+    const name = authService.check();
+    if (name) {
+      const newArticle = {
+        id: Date.now(),
+        title: titleRef.current.value || "",
+        content: contentRef.current.value || "",
+        uploadDate: `${month
+          .toString()
+          .padStart(2, "0")}/${date.toString().padStart(2, "0")}`,
+        uploadTime: `${hour
+          .toString()
+          .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`,
+        uploader: name.displayName,
+      };
 
-    const newArticle = {
-      id: Date.now(),
-      title: titleRef.current.value || "",
-      content: contentRef.current.value || "",
-      uploadDate: `${month
-        .toString()
-        .padStart(2, "0")}/${date.toString().padStart(2, "0")}`,
-      uploadTime: `${hour
-        .toString()
-        .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`,
-      uploader: authService.check().displayName,
-    };
-
-    uploadArticle(newArticle);
-    history.push("/bbs");
+      uploadArticle(newArticle);
+      history.push("/bbs");
+    } else {
+      history.push("/");
+      window.alert("로그인 후에 이용해주세요.");
+    }
   };
 
   return (

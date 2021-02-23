@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = ({ logout, authService }) => {
+const Header = ({ logout, authService, inherentId }) => {
   const history = useHistory();
 
   const [check, setCheck] = useState(false);
@@ -61,8 +61,13 @@ const Header = ({ logout, authService }) => {
   };
 
   const goMyPage = () => {
-    history.push("/mypage");
-    window.scrollTo({ top: 0 });
+    if (inherentId) {
+      history.push(`/mypage/${inherentId}`);
+      window.scrollTo({ top: 0 });
+    } else {
+      history.push("/");
+      window.alert("로그인 후에 사용해주세요.");
+    }
   };
 
   return (

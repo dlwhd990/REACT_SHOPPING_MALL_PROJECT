@@ -15,6 +15,8 @@ import ItemView from "./components/itemView/itemView";
 import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
+import Mypage from "./components/mypage/mypage";
+import Errorpage from "./components/errorpage/errorpage";
 
 const App = ({ authService, userDataRepository, articleRepository }) => {
   const [items, setItems] = useState({
@@ -123,13 +125,12 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
 
   const [loginCheck, setLoginCheck] = useState(false);
 
-  const [inherenceId, setInherenceId] = useState(null);
+  const [inherentId, setInherentId] = useState(null);
 
   const pressLoginButton = (id) => {
-    setInherenceId(id);
+    setInherentId(id);
     setLoginCheck(!loginCheck);
   };
-
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
     setArticles((articles) => {
@@ -142,9 +143,15 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
 
   const logout = () => {
     authService.logout();
-    setInherenceId(null);
+    setInherentId(null);
     window.location.reload();
   };
+
+  useEffect(() => {
+    const tmp = authService.check();
+    tmp && setInherentId(tmp.uid);
+    console.log(inherentId);
+  });
 
   useEffect(() => {
     const stopSync = articleRepository.settingArticles((articles) => {
@@ -153,8 +160,6 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     return () => stopSync();
   }, []);
 
-  console.log(authService.check());
-
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -162,6 +167,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
           authService={authService}
           logout={logout}
           logincheck={loginCheck}
+          inherentId={inherentId}
         />
         <Switch>
           <Route exact path="/">
@@ -194,7 +200,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
               <ArticleView
                 articles={articles}
                 userDataRepository={userDataRepository}
-                inherenceId={inherenceId}
+                inherentId={inherentId}
               />
             )}
           </Route>
@@ -207,6 +213,9 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
               userDataRepository={userDataRepository}
               pressLoginButton={pressLoginButton}
             />
+          </Route>
+          <Route exact path="/mypage/:id">
+            {inherentId ? <Mypage inherentId={inherentId} /> : <Errorpage />}
           </Route>
         </Switch>
       </BrowserRouter>
