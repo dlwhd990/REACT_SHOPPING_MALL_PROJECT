@@ -2,18 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = ({ logout, authService, inherentId }) => {
+const Header = ({ logout, userData }) => {
   const history = useHistory();
-
-  const [check, setCheck] = useState(false);
-
-  const loginCheck = () => {
-    setCheck(!check);
-  };
-
-  useEffect(() => {
-    setCheck(authService.check());
-  });
 
   const goHome = () => {
     history.push("/");
@@ -56,13 +46,12 @@ const Header = ({ logout, authService, inherentId }) => {
   };
 
   const goLogout = () => {
-    loginCheck();
     logout();
   };
 
   const goMyPage = () => {
-    if (inherentId) {
-      history.push(`/mypage/${inherentId}`);
+    if (userData.id) {
+      history.push(`/mypage/${userData.id}`);
       window.scrollTo({ top: 0 });
     } else {
       history.push("/");
@@ -106,7 +95,7 @@ const Header = ({ logout, authService, inherentId }) => {
       <div className={styles.buttons}>
         <button
           className={`${styles.loginButton} ${
-            check ? styles.onlogin : styles.onlogout
+            userData.id ? styles.onlogin : styles.onlogout
           }`}
           onClick={goLogin}
         >
@@ -114,7 +103,7 @@ const Header = ({ logout, authService, inherentId }) => {
         </button>
         <div
           className={`${styles.logedin} ${
-            check ? styles.onlogin : styles.onlogout
+            userData.id ? styles.onlogin : styles.onlogout
           }`}
         >
           <button className={styles.mypage} onClick={goMyPage}>

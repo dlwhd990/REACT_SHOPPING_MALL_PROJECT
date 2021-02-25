@@ -11,13 +11,6 @@ class AuthService {
     firebaseApp.auth().signOut();
   }
 
-  update(value) {
-    const user = firebaseApp.auth().currentUser;
-    user.updateProfile({
-      displayName: value,
-    });
-  }
-
   check() {
     const user = firebaseApp.auth().currentUser;
     return user;

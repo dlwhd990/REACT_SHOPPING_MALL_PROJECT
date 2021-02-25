@@ -18,7 +18,12 @@ import Login from "./components/login/login";
 import Mypage from "./components/mypage/mypage";
 import Errorpage from "./components/errorpage/errorpage";
 
-const App = ({ authService, userDataRepository, articleRepository }) => {
+const App = ({
+  authService,
+  userDataRepository,
+  articleRepository,
+  ImageInputRound,
+}) => {
   const [items, setItems] = useState({
     1: {
       id: 1,
@@ -121,16 +126,20 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     },
   });
 
-  const [articles, setArticles] = useState(null);
-
-  const [loginCheck, setLoginCheck] = useState(false);
+  const [articles, setArticles] = useState({});
 
   const [inherentId, setInherentId] = useState(null);
 
+  const [userData, setUserData] = useState({
+    id: null,
+    nickname: null,
+    imageURL: null,
+  });
+
   const pressLoginButton = (id) => {
     setInherentId(id);
-    setLoginCheck(!loginCheck);
   };
+
   const uploadArticle = (newArticle) => {
     window.scrollTo({ top: 0 });
     setArticles((articles) => {
@@ -141,10 +150,19 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     articleRepository.saveArticle(newArticle.id, newArticle);
   };
 
+  const setUser = (value) => {
+    console.log(value);
+    setUserData(value);
+    console.log(userData);
+  };
+
   const logout = () => {
     authService.logout();
-    setInherentId(null);
-    window.location.reload();
+    setUserData({
+      id: null,
+      nickname: null,
+      imageURL: null,
+    });
   };
 
   useEffect(() => {
@@ -152,6 +170,10 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
     tmp && setInherentId(tmp.uid);
     console.log(inherentId);
   });
+
+  useEffect(() => {
+    userDataRepository.getUserData(inherentId, setUser);
+  }, [inherentId]);
 
   useEffect(() => {
     const stopSync = articleRepository.settingArticles((articles) => {
@@ -163,12 +185,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
   return (
     <div className={styles.app}>
       <BrowserRouter>
-        <Header
-          authService={authService}
-          logout={logout}
-          logincheck={loginCheck}
-          inherentId={inherentId}
-        />
+        <Header logout={logout} userData={userData} />
         <Switch>
           <Route exact path="/">
             <MainPage items={items} />
@@ -181,7 +198,7 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             <Notice />
           </Route>
           <Route exact path="/itemlist">
-            <ItemListPage items={items} />
+            <ItemListPage items={items} userData={userData} />
           </Route>
           <Route exact path="/event">
             <EventPage />
@@ -205,7 +222,13 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             )}
           </Route>
           <Route exact path="/writearticle">
-            <Write uploadArticle={uploadArticle} authService={authService} />
+            {userData.id && (
+              <Write
+                uploadArticle={uploadArticle}
+                authService={authService}
+                userData={userData}
+              />
+            )}
           </Route>
           <Route exact path="/login">
             <Login
@@ -215,7 +238,16 @@ const App = ({ authService, userDataRepository, articleRepository }) => {
             />
           </Route>
           <Route exact path="/mypage/:id">
-            {inherentId ? <Mypage inherentId={inherentId} /> : <Errorpage />}
+            {userData.id ? (
+              <Mypage
+                authService={authService}
+                ImageInputRound={ImageInputRound}
+                userDataRepository={userDataRepository}
+                userData={userData}
+              />
+            ) : (
+              <Errorpage />
+            )}
           </Route>
         </Switch>
       </BrowserRouter>

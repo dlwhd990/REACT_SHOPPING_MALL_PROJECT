@@ -1,0 +1,70 @@
+.mypage {
+  margin: 6rem 2rem;
+}
+
+.container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info {
+  border: 2px solid lightgray;
+  width: 40rem;
+  padding: 2rem;
+}
+
+.info_top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.part_image {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 7rem;
+  height: 7rem;
+}
+
+.top_right {
+  padding-left: 2rem;
+}
+
+.part_name {
+  padding-bottom: 0.7rem;
+}
+
+.name_title,
+.email_title {
+  padding-right: 1rem;
+  font-weight: 600;
+}
+
+.name_input {
+  outline: none;
+  font-size: 1rem;
+  padding-left: 0.2rem;
+}
+
+.part_save_button {
+  text-align: center;
+}
+
+.save_button {
+  cursor: pointer;
+  width: 4rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}

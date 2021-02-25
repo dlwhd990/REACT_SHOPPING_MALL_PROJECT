@@ -1,20 +1,34 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./quickMenu.module.css";
 
-const QuickMenu = (props) => {
+const QuickMenu = ({ userData }) => {
+  const history = useHistory();
+
+  const goMyPage = () => {
+    if (userData.id) {
+      history.push(`/mypage/${userData.id}`);
+      window.scrollTo({ top: 0 });
+    } else {
+      window.alert("로그인 후에 사용해주세요.");
+    }
+  };
+
   return (
     <section className={styles.quickMenu}>
       <div className={styles.member_info}>
         <div className={styles.image_border}>
           <img
-            src="./images/logo.png"
+            src={userData.imageURL || "../../images/default.png"}
             alt="member_profile_image"
             className={styles.profile_image}
           />
         </div>
 
-        <p className={styles.profile_name}>Con</p>
-        <button className={styles.myPage_button}>마이페이지</button>
+        <p className={styles.profile_name}>{userData.nickname || ""}</p>
+        <button className={styles.myPage_button} onClick={goMyPage}>
+          마이페이지
+        </button>
       </div>
       <div className={styles.divider}></div>
       <div className={styles.list}>

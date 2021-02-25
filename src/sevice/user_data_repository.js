@@ -7,6 +7,7 @@ const signUp = (userId, userName) => {
   const newUser = {
     id: userId,
     nickname: userName,
+    imageURL: "../../images/default.png",
   };
   firebaseApp.database().ref(`userdata/${userId}`).set(newUser);
 };
@@ -35,6 +36,15 @@ class UserDataRepository {
     ref.once("value").then(function (snapshot) {
       setCheck(id, snapshot.val());
     });
+  }
+
+  getUserData(id, onUpdate) {
+    const ref = firebaseApp.database().ref(`userdata/${id}`);
+    ref.on("value", (item) => {
+      const value = item.val();
+      value && onUpdate(value);
+    });
+    return () => ref.off();
   }
 }
 export default UserDataRepository;

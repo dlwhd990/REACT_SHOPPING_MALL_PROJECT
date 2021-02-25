@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button.pink {
+  background-color: pink;
+}
+
+.button.grey {
+  background-color: lightgray;
+}
+
+.loading {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 3px solid lightgray;
+  border-radius: 50%;
+  border-top: 3px solid pink;
+  animation: spin 2s linear infinite;
+}
+
+.input {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

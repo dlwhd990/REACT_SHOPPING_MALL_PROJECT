@@ -4,7 +4,7 @@ import ItemPreview from "../itemPreview/itemPreview";
 import QuickMenu from "../quickMenu/quickMenu";
 import styles from "./itemListPage.module.css";
 
-const ItemListPage = ({ items }) => {
+const ItemListPage = ({ items, userData }) => {
   const [filtered, setFiltered] = useState(Object.keys(items));
   const history = useHistory();
 
@@ -26,7 +26,7 @@ const ItemListPage = ({ items }) => {
   return (
     <section className={styles.itemListPage}>
       <div className={styles.quickMenu}>
-        <QuickMenu />
+        <QuickMenu userData={userData} />
       </div>
       <div className={styles.container}>
         <h1 className={styles.title}>상품 리스트</h1>

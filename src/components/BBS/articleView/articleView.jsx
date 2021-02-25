@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom";
 
 const ArticleView = ({ inherenceId, articles }) => {
   const { id } = useParams();
-  console.log(inherenceId);
+  console.log(articles);
+
+  console.log(articles[id].uploaderProfileImage);
 
   return (
     <section className={styles.articleView}>
@@ -12,7 +14,7 @@ const ArticleView = ({ inherenceId, articles }) => {
         <div className={styles.top}>
           <div className={styles.userdata}>
             <img
-              src="../../images/default.png"
+              src={articles[id].uploaderProfileImage}
               alt=""
               className={styles.userImage}
             />

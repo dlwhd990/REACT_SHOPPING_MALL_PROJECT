@@ -22,7 +22,9 @@
 .image_border {
   width: 9rem;
   height: 9rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem;
   border: 1px solid color_white;
   border-radius: 50%;
@@ -30,8 +32,13 @@
 }
 
 .profile_image {
-  width: 7rem;
-  height: 7rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+}
+
+.profile_name {
+  padding-bottom: 0.5rem;
 }
 
 .myPage_button {

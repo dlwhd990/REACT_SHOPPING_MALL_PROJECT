@@ -1,8 +1,8 @@
 import firebaseApp from "./firebase";
 
 class ArticleRepository {
-  saveArticle(id, article) {
-    firebaseApp.database().ref(`bbs/${id}`).set(article);
+  saveArticle(number, article) {
+    firebaseApp.database().ref(`bbs/${number}`).set(article);
   }
   removeArticle(id) {
     firebaseApp.database().ref(`bbs/${id}`).remove();

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./write.module.css";
 
-const Write = ({ uploadArticle, authService }) => {
+const Write = ({ userData, uploadArticle, authService }) => {
   const titleRef = useRef();
   const contentRef = useRef();
   const history = useHistory();
@@ -25,7 +25,9 @@ const Write = ({ uploadArticle, authService }) => {
         uploadTime: `${hour
           .toString()
           .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`,
-        uploader: name.displayName,
+        uploader: userData.nickname,
+        uploaderId: userData.id,
+        uploaderProfileImage: userData.imageURL,
       };
 
       uploadArticle(newArticle);
