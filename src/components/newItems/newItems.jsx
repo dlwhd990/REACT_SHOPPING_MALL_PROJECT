@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import ItemPreview from "../itemPreview/itemPreview";
 import styles from "./newItems.module.css";
 
-const NewItems = ({ items }) => {
+const NewItems = ({ items, itemList }) => {
   const history = useHistory();
 
   const itemView = (item) => {
@@ -17,7 +17,7 @@ const NewItems = ({ items }) => {
         <p className={styles.description}>꼭! 체크해봐야할 신상들이에요</p>
       </div>
       <div className={styles.list}>
-        {Object.keys(items).map((key) => (
+        {itemList.map((key) => (
           <ItemPreview key={key} item={items[key]} itemView={itemView} />
         ))}
       </div>

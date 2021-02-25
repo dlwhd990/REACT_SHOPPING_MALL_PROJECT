@@ -16,8 +16,11 @@ const ArticleView = ({ userData, articles, articleRepository }) => {
   });
 
   const deleteArticle = () => {
-    articleRepository.removeArticle(id);
-    history.push("/bbs");
+    const popup = window.confirm("진짜?");
+    if (popup) {
+      articleRepository.removeArticle(id);
+      history.push("/bbs");
+    }
   };
 
   return (

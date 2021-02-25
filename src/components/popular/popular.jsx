@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import ItemPreview from "../itemPreview/itemPreview";
 import styles from "./popular.module.css";
 
-const Popular = ({ items }) => {
+const Popular = ({ items, itemList }) => {
   const history = useHistory();
   const itemView = (item) => {
     history.push(`/itemview/${item.id}`);
@@ -16,7 +16,7 @@ const Popular = ({ items }) => {
         <p className={styles.description}>Con's의 인기상품들이에요.</p>
       </div>
       <div className={styles.list}>
-        {Object.keys(items).map((key) => (
+        {itemList.map((key) => (
           <ItemPreview key={key} item={items[key]} itemView={itemView} />
         ))}
       </div>

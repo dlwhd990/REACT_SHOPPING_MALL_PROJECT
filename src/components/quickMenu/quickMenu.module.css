@@ -40,6 +40,8 @@
 
 .profile_name {
   padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .myPage_button {
@@ -69,5 +71,5 @@
   margin: 0.7rem;
   padding: 0.3rem;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
