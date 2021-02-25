@@ -31,7 +31,7 @@ const App = ({
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageURL: "../../images/logo.png",
+      imageURL: "images/logo.png",
       option: ["대", "중", "소"],
     },
 
@@ -41,7 +41,7 @@ const App = ({
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageURL: "../../images/ryan.png",
+      imageURL: "images/ryan.png",
       option: ["대", "중", "소"],
     },
 
@@ -51,7 +51,7 @@ const App = ({
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageURL: "../../images/tube.png",
+      imageURL: "images/tube.png",
       option: ["대", "중", "소"],
     },
 
@@ -61,7 +61,7 @@ const App = ({
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageURL: "../../images/logo.png",
+      imageURL: "images/logo.png",
       option: ["대", "중", "소"],
     },
 
@@ -71,7 +71,7 @@ const App = ({
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageURL: "../../images/ryan.png",
+      imageURL: "images/ryan.png",
       option: ["대", "중", "소"],
     },
 
@@ -81,7 +81,7 @@ const App = ({
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageURL: "../../images/tube.png",
+      imageURL: "images/tube.png",
       option: ["대", "중", "소"],
     },
 
@@ -91,7 +91,7 @@ const App = ({
       name: "귀여운 콘 인형",
       price: 10000,
       description: "세상에서 제일 귀여운 콘 인형이에요!",
-      imageURL: "../../images/logo.png",
+      imageURL: "images/logo.png",
       option: ["대", "중", "소"],
     },
 
@@ -101,7 +101,7 @@ const App = ({
       name: "귀여운 라이언 인형",
       price: 8000,
       description: "라이언도 귀여워요",
-      imageURL: "../../images/ryan.png",
+      imageURL: "images/ryan.png",
       option: ["대", "중", "소"],
     },
 
@@ -111,7 +111,7 @@ const App = ({
       name: "귀여운 튜브 인형",
       price: 10000,
       description: "콧물을 닦아주는 라이언과 튜브에요!",
-      imageURL: "../../images/tube.png",
+      imageURL: "images/tube.png",
       option: ["대", "중", "소"],
     },
 
@@ -121,7 +121,7 @@ const App = ({
       name: "마스크 라이언과 춘식이",
       price: 29000,
       description: "마스크를 착용한 라이언과 춘식이에요",
-      imageURL: "../../images/pro.jpg",
+      imageURL: "images/pro.jpg",
       option: ["대", "중", "소"],
     },
   });
