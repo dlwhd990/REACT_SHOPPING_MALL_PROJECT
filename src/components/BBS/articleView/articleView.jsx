@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./articleView.module.css";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
-const ArticleView = ({ inherenceId, articles }) => {
+const ArticleView = ({ userData, articles, articleRepository }) => {
   const { id } = useParams();
-  console.log(articles);
+  const history = useHistory();
+  const [deleteOn, setDeleteOn] = useState(false);
 
-  console.log(articles[id].uploaderProfileImage);
+  useEffect(() => {
+    if (userData.id === articles[id].uploaderId) {
+      setDeleteOn(true);
+    } else {
+      setDeleteOn(false);
+    }
+  });
+
+  const deleteArticle = () => {
+    articleRepository.removeArticle(id);
+    history.push("/bbs");
+  };
 
   return (
     <section className={styles.articleView}>
@@ -26,7 +38,14 @@ const ArticleView = ({ inherenceId, articles }) => {
             </div>
           </div>
 
-          <button className={styles.deleteButton}>삭제</button>
+          <button
+            className={`${styles.deleteButton} ${
+              deleteOn ? styles.deleteOn : styles.deleteOff
+            }`}
+            onClick={deleteArticle}
+          >
+            삭제
+          </button>
         </div>
         <h2 className={styles.title}>{articles[id].title}</h2>
         <p className={styles.content}>{articles[id].content}</p>

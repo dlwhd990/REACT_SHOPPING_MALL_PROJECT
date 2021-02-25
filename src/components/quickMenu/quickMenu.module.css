@@ -29,6 +29,7 @@
   border: 1px solid color_white;
   border-radius: 50%;
   margin-bottom: 1rem;
+  background-color: white;
 }
 
 .profile_image {

@@ -126,7 +126,7 @@ const App = ({
     },
   });
 
-  const [articles, setArticles] = useState({});
+  const [articles, setArticles] = useState(null);
 
   const [inherentId, setInherentId] = useState(null);
 
@@ -151,9 +151,7 @@ const App = ({
   };
 
   const setUser = (value) => {
-    console.log(value);
     setUserData(value);
-    console.log(userData);
   };
 
   const logout = () => {
@@ -216,8 +214,8 @@ const App = ({
             {articles && (
               <ArticleView
                 articles={articles}
-                userDataRepository={userDataRepository}
-                inherentId={inherentId}
+                userData={userData}
+                articleRepository={articleRepository}
               />
             )}
           </Route>

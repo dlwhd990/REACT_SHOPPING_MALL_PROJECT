@@ -50,6 +50,11 @@
   outline: none;
   cursor: pointer;
   border-radius: 4px;
+  display: none;
+}
+
+.deleteButton.deleteOn {
+  display: block;
 }
 
 .uploadTime {

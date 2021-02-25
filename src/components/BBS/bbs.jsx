@@ -15,7 +15,6 @@ const Bbs = ({ articles, authService }) => {
     }
   };
   const articleList = Object.keys(articles).reverse();
-
   return (
     <section className={styles.bbs}>
       <div className={styles.container}>
