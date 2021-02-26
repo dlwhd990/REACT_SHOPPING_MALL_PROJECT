@@ -138,7 +138,11 @@ const App = ({
             )}
           </Route>
           <Route exact path="/itemlist">
-            {items && <ItemListPage items={items} userData={userData} />}
+            {items ? (
+              <ItemListPage items={items} userData={userData} />
+            ) : (
+              <Loading />
+            )}
           </Route>
           <Route exact path="/event">
             <EventPage />
@@ -166,12 +170,14 @@ const App = ({
             )}
           </Route>
           <Route exact path="/writearticle">
-            {userData.id && (
+            {userData.id ? (
               <Write
                 uploadArticle={uploadArticle}
                 authService={authService}
                 userData={userData}
               />
+            ) : (
+              <Errorpage />
             )}
           </Route>
           <Route exact path="/login">

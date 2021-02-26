@@ -6,7 +6,7 @@ import styles from "./itemListPage.module.css";
 
 const ItemListPage = ({ items, userData }) => {
   const [filtered, setFiltered] = useState(Object.keys(items));
-  const [all, setAll] = useState(false);
+  const [all, setAll] = useState(true);
   const [doll, setDoll] = useState(false);
   const [life, setLife] = useState(false);
   const [cases, setCases] = useState(false);
@@ -73,7 +73,6 @@ const ItemListPage = ({ items, userData }) => {
         <QuickMenu userData={userData} />
       </div>
       <div className={styles.container}>
-        <h1 className={styles.title}>상품 리스트</h1>
         <div className={styles.select_list}>
           <ul className={styles.ul}>
             <li>

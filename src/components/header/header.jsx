@@ -82,9 +82,7 @@ const Header = ({ logout, userData }) => {
         <li className={styles.item} onClick={goItemList}>
           상품리스트
         </li>
-        <li className={styles.item} onClick={goEvent}>
-          이벤트
-        </li>
+
         <li className={styles.item} onClick={goBBS}>
           게시판
         </li>

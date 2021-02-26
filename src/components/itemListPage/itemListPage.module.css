@@ -4,10 +4,6 @@
   height: 100vh;
 }
 
-.title {
-  padding: 2rem 0 0 2rem;
-}
-
 .container {
   margin: 4.5rem 0 0 15rem;
   display: flex;

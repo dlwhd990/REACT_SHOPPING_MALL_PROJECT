@@ -1,7 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./mypage.module.css";
 
-const Mypage = ({ ImageInputRound, userDataRepository, userData }) => {
+const Mypage = ({
+  ImageInputRound,
+  userDataRepository,
+  userData,
+  authService,
+}) => {
   let nameRef = useRef();
 
   const [file, setFile] = useState(userData.imageURL);
@@ -44,7 +49,6 @@ const Mypage = ({ ImageInputRound, userDataRepository, userData }) => {
 
   return (
     <section className={styles.mypage}>
-      <h1>마이페이지</h1>
       <section className={styles.container}>
         <div className={styles.info}>
           <div className={styles.info_top}>
@@ -66,7 +70,9 @@ const Mypage = ({ ImageInputRound, userDataRepository, userData }) => {
               </div>
               <div className={styles.part_email}>
                 <span className={styles.email_title}>이메일</span>
-                <span className={styles.email_input}>dlwhd990@gmail.com</span>
+                <span className={styles.email_input}>
+                  {authService.check().email}
+                </span>
               </div>
             </div>
           </div>

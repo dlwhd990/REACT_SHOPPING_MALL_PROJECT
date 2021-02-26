@@ -52,6 +52,12 @@
   outline: none;
   white-space: nowrap;
   margin-right: 7rem;
+  transition: all 200ms ease;
+}
+
+.loginButton:hover {
+  background-color: pink;
+  opacity: 0.8;
 }
 
 .logedin {
@@ -71,6 +77,7 @@
   cursor: pointer;
   outline: none;
   white-space: nowrap;
+  transition: all 200ms ease;
 }
 
 .mypage {
@@ -85,6 +92,17 @@
   outline: none;
   white-space: nowrap;
   margin-right: 1rem;
+  transition: all 200ms ease;
+}
+
+.logoutButton:hover {
+  background-color: pink;
+  opacity: 0.8;
+}
+
+.mypage:hover {
+  background-color: pink;
+  opacity: 0.8;
 }
 
 .loginButton.onlogin {
