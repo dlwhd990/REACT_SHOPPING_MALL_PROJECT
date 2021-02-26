@@ -1,0 +1,92 @@
+.noticeView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem 0;
+}
+
+.container {
+  border: 2px solid lightgray;
+  width: 45%;
+  padding: 2rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userdata {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.userImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
+
+.textdata {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.deleteButton {
+  width: 3rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: lightgray;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: none;
+}
+
+.deleteButton.deleteOn {
+  display: block;
+}
+
+.uploadTime {
+  color: rgb(146, 142, 142);
+  width: 10rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.content {
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+}
+
+.evaluation {
+  position: relative;
+  left: 92%;
+  width: 3rem;
+  padding: 0;
+  color: red;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.likeButton {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: red;
+}

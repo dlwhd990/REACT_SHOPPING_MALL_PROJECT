@@ -17,6 +17,9 @@ import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
 import Mypage from "./components/mypage/mypage";
 import Errorpage from "./components/errorpage/errorpage";
+import Loading from "./components/loading/loading";
+import NoticeWrite from "./components/notice/write/noticeWrite";
+import NoticeView from "./components/notice/noticeView/noticeView";
 
 const App = ({
   authService,
@@ -24,6 +27,7 @@ const App = ({
   articleRepository,
   ImageInputRound,
   itemRepository,
+  noticeRepository,
 }) => {
   const adminId = process.env.REACT_APP_ADMIN_ID;
 
@@ -39,6 +43,8 @@ const App = ({
     imageURL: null,
   });
 
+  const [notices, setNotices] = useState(null);
+
   const pressLoginButton = (id) => {
     setInherentId(id);
   };
@@ -53,6 +59,16 @@ const App = ({
     articleRepository.saveArticle(newArticle.id, newArticle);
   };
 
+  const uploadNotice = (newNotice) => {
+    window.scrollTo({ top: 0 });
+    setArticles(() => {
+      const updated = { ...notices };
+      updated[newNotice.id] = newNotice;
+      return updated;
+    });
+    noticeRepository.saveNotice(newNotice.id, newNotice);
+  };
+
   const setUser = (value) => {
     setUserData(value);
   };
@@ -64,6 +80,7 @@ const App = ({
       nickname: null,
       imageURL: null,
     });
+    setInherentId(null);
   };
 
   useEffect(() => {
@@ -90,20 +107,35 @@ const App = ({
     return () => stopSync();
   }, []);
 
+  useEffect(() => {
+    const stopSync = noticeRepository.settingNotices((notices) => {
+      setNotices(notices);
+    });
+    return () => stopSync();
+  }, []);
+  console.log(notices);
+
   return (
     <div className={styles.app}>
       <BrowserRouter>
         <Header logout={logout} userData={userData} />
         <Switch>
           <Route exact path="/">
-            {items && <MainPage items={items} />}
+            {items ? <MainPage items={items} /> : <Loading />}
             <Footer />
           </Route>
           <Route exact path="/intro">
             <Intro />
           </Route>
           <Route exact path="/notice">
-            <Notice />
+            {notices && (
+              <Notice
+                noticeRepository={noticeRepository}
+                notices={notices}
+                authService={authService}
+                adminId={adminId}
+              />
+            )}
           </Route>
           <Route exact path="/itemlist">
             {items && <ItemListPage items={items} userData={userData} />}
@@ -112,7 +144,11 @@ const App = ({
             <EventPage />
           </Route>
           <Route exact path="/bbs">
-            {articles && <Bbs articles={articles} authService={authService} />}
+            {articles ? (
+              <Bbs articles={articles} authService={authService} />
+            ) : (
+              <Loading />
+            )}
           </Route>
           <Route exact path="/customer">
             <CustomerCenter />
@@ -154,7 +190,24 @@ const App = ({
                 userData={userData}
               />
             ) : (
-              <Errorpage />
+              <Loading />
+            )}
+          </Route>
+          <Route exact path="/writenotice">
+            <NoticeWrite
+              uploadNotice={uploadNotice}
+              userData={userData}
+              authService={authService}
+              adminId={adminId}
+            />
+          </Route>
+          <Route exact path="/noticearticleview/:id">
+            {notices && (
+              <NoticeView
+                notices={notices}
+                userData={userData}
+                noticeRepository={noticeRepository}
+              />
             )}
           </Route>
         </Switch>

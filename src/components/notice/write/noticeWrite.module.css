@@ -1,0 +1,65 @@
+.write {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+.writeform {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 45rem;
+  border: 2px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.titleInput {
+  outline: none;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  height: 4rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.contentInput {
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+  height: 40rem;
+  resize: none;
+  border: none;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0;
+}
+
+.buttons {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid lightgray;
+  border-top: none;
+  height: 3rem;
+}
+
+.imageUpload {
+  flex-basis: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-right: 1px solid lightgray;
+}
+
+.upload {
+  flex-basis: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

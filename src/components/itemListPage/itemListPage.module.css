@@ -17,28 +17,27 @@
 .ul {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  white-space: nowrap;
 }
 .select_list {
   margin: 3rem 0;
 }
 
 .select {
-  width: 100%;
-  padding: 0.5rem 2.5rem;
   cursor: pointer;
+  padding: 0.3rem;
+  margin: 2rem;
   background-color: transparent;
   border: none;
   outline: none;
-  border-right: 1px solid lightgray;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.select.last {
-  border: none;
+.select.on {
+  border-bottom: 3px solid skyblue;
 }
 
 .itemlist {

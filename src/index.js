@@ -10,11 +10,13 @@ import ImageUploader from "./sevice/imageUploader";
 import ImageUpload from "./components/imageupload/imageUpload";
 import ImageUploadRound from "./components/imageupload/imageUploadRound";
 import ItemRepository from "./sevice/item_repository";
+import NoticeRepository from "./sevice/notice_repository";
 
 const authService = new AuthService();
 const userDataRepository = new UserDataRepository();
 const articleRepository = new ArticleRepository();
 const itemRepository = new ItemRepository();
+const noticeRepository = new NoticeRepository();
 const imageUploader = new ImageUploader();
 const ImageInputRound = (props) => (
   <ImageUploadRound {...props} imageUploader={imageUploader} />
@@ -32,6 +34,7 @@ ReactDOM.render(
       ImageInput={ImageInput}
       ImageInputRound={ImageInputRound}
       itemRepository={itemRepository}
+      noticeRepository={noticeRepository}
     />
   </React.StrictMode>,
   document.getElementById("root")

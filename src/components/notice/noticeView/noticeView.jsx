@@ -1,45 +1,45 @@
 import React, { useEffect, useState } from "react";
-import styles from "./articleView.module.css";
+import styles from "./noticeView.module.css";
 import { useHistory, useParams } from "react-router-dom";
 
-const ArticleView = ({ userData, articles, articleRepository }) => {
+const NoticeView = ({ userData, notices, noticeRepository }) => {
   const { id } = useParams();
   const history = useHistory();
   const [deleteOn, setDeleteOn] = useState(false);
 
   useEffect(() => {
-    if (userData.id === articles[id].uploaderId) {
+    if (userData.id === notices[id].uploaderId) {
       setDeleteOn(true);
     } else {
       setDeleteOn(false);
     }
   });
 
-  const deleteArticle = () => {
+  const deleteNotice = () => {
     const popup = window.confirm(
       "정말로 삭제하시겠습니까? 삭제된 글은 복구하실 수 없습니다."
     );
     if (popup) {
-      articleRepository.removeArticle(id);
+      noticeRepository.removeNotice(id);
       history.push("/bbs");
     }
   };
 
   return (
-    <section className={styles.articleView}>
+    <section className={styles.noticeView}>
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.userdata}>
             <img
-              src={articles[id].uploaderProfileImage}
+              src={notices[id].uploaderProfileImage}
               alt=""
               className={styles.userImage}
             />
             <div className={styles.textdata}>
-              <h3 className={styles.uploader}>{articles[id].uploader}</h3>
+              <h3 className={styles.uploader}>{notices[id].uploader}</h3>
               <span
                 className={styles.uploadTime}
-              >{`${articles[id].uploadDate}  ${articles[id].uploadTime}`}</span>
+              >{`${notices[id].uploadDate}  ${notices[id].uploadTime}`}</span>
             </div>
           </div>
 
@@ -47,13 +47,13 @@ const ArticleView = ({ userData, articles, articleRepository }) => {
             className={`${styles.deleteButton} ${
               deleteOn ? styles.deleteOn : styles.deleteOff
             }`}
-            onClick={deleteArticle}
+            onClick={deleteNotice}
           >
             삭제
           </button>
         </div>
-        <h2 className={styles.title}>{articles[id].title}</h2>
-        <p className={styles.content}>{articles[id].content}</p>
+        <h2 className={styles.title}>{notices[id].title}</h2>
+        <p className={styles.content}>{notices[id].content}</p>
         <div className={styles.evaluation}>
           <button className={styles.likeButton}>
             <i className="far fa-thumbs-up"></i>
@@ -65,4 +65,4 @@ const ArticleView = ({ userData, articles, articleRepository }) => {
   );
 };
 
-export default ArticleView;
+export default NoticeView;

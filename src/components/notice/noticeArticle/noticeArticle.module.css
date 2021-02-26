@@ -1,0 +1,41 @@
+.noticeArticle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+  height: 4rem;
+}
+
+.noticeArticle:hover {
+  background-color: rgb(243, 239, 239);
+}
+
+.title {
+  padding-left: 1rem;
+}
+
+.data {
+  display: flex;
+  border-left: 1px solid lightgray;
+  height: 100%;
+}
+
+.time {
+  width: 8rem;
+  height: 100%;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.name {
+  width: 7rem;
+  height: 100%;
+  border-left: 1px solid lightgray;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+span {
+  padding: 0;
+}
