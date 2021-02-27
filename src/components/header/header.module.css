@@ -14,7 +14,7 @@
 }
 
 .logo {
-  padding-left: 3rem;
+  padding-left: 2rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -25,7 +25,8 @@
 }
 
 .title {
-  margin-left: 0.5rem;
+  margin-left: 0.7rem;
+  font-size: 1.8rem;
 }
 
 .list {

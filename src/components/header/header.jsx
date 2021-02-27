@@ -67,7 +67,7 @@ const Header = ({ logout, userData }) => {
           alt="logo__image"
           className={styles.image}
         />
-        <h1 className={styles.title}>Con's</h1>
+        <h1 className={styles.title}>콘스</h1>
       </div>
       <ul className={styles.list}>
         <li className={styles.item} onClick={goHome}>

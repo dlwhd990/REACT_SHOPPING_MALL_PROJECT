@@ -4,6 +4,16 @@ import styles from "./itemView.module.css";
 
 const ItemView = ({ items }) => {
   const { id } = useParams();
+
+  const option1 = items[id].option1;
+  const option2 = items[id].option2;
+  console.log(items[id].option1);
+  console.log(items[id].option2);
+  const option1_idlist = Object.keys(option1);
+  const option2_idlist = Object.keys(option2);
+  console.log(option1);
+  console.log(option2);
+
   return (
     <section className={styles.itemview}>
       <div className={styles.image_border}>
@@ -17,16 +27,15 @@ const ItemView = ({ items }) => {
         <div className={styles.options}>
           <h3>옵션1</h3>
           <select name="option1" id="" className={styles.option}>
-            {items[id].option.map((item) => (
-              <option key={item}>{item}</option>
+            {option1_idlist.map((key) => (
+              <option key={key}>{option1[key].name}</option>
             ))}
           </select>
           <h3>옵션2</h3>
           <select name="option2" id="" className={styles.option}>
-            <option value="굼스!!">굼스!!</option>
-            <option value="굼스!!">짱스!!</option>
-            <option value="굼스!!">밥스!!</option>
-            <option value="굼스!!">옹스!!</option>
+            {option2_idlist.map((key) => (
+              <option key={key}>{option2[key].name}</option>
+            ))}
           </select>
           <h2 className={styles.cost}>합계</h2>
           <h1>{`${items[id].price}원`}</h1>

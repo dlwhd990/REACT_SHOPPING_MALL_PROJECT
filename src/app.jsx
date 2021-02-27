@@ -157,7 +157,7 @@ const App = ({
             <CustomerCenter />
           </Route>
           <Route exact path="/itemview/:id">
-            <ItemView items={items} />
+            {items ? <ItemView items={items} /> : <Loading />}
           </Route>
           <Route exact path="/articleview/:id">
             {articles && (
