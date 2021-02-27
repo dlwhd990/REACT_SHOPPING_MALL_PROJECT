@@ -113,7 +113,6 @@ const App = ({
     });
     return () => stopSync();
   }, []);
-  console.log(notices);
 
   return (
     <div className={styles.app}>

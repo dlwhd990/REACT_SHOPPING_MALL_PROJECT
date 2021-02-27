@@ -25,6 +25,27 @@
   border: 1px solid lightgray;
 }
 
+.bottom {
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.pagenum {
+  width: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.number {
+  padding: 0 0.5rem;
+}
+
 .write {
   width: 5rem;
   height: 2rem;
@@ -32,7 +53,7 @@
   font-weight: 600;
   outline: none;
   background-color: lightgray;
-  border: lightgray;
+  border: none;
   border-radius: 2px;
   cursor: pointer;
 }

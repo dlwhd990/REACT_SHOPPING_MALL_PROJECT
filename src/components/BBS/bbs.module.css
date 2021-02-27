@@ -1,5 +1,5 @@
 .container {
-  width: 45%;
+  width: 40rem;
   height: 82vh;
   margin: auto;
   margin-top: 8rem;
@@ -20,9 +20,30 @@
 }
 
 .board {
-  width: 100%;
+  width: 40rem;
   height: 40rem;
   border: 1px solid lightgray;
+}
+
+.bottom {
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.pagenum {
+  width: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.number {
+  padding: 0 0.5rem;
 }
 
 .write {
@@ -32,7 +53,7 @@
   font-weight: 600;
   outline: none;
   background-color: lightgray;
-  border: lightgray;
+  border: none;
   border-radius: 2px;
   cursor: pointer;
 }

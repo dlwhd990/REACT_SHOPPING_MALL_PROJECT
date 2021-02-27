@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./notice.module.css";
 import NoticeArticle from "./noticeArticle/noticeArticle";
 
 const Notice = ({ notices, noticeRepository, authService, adminId }) => {
   const history = useHistory();
+  const [numbering, setNumbering] = useState(1);
   const write = () => {
     const user = authService.check();
     if (user && user.uid === adminId) {
@@ -16,6 +17,41 @@ const Notice = ({ notices, noticeRepository, authService, adminId }) => {
   };
 
   const noticeArticleList = Object.keys(notices).reverse();
+
+  let pagelength = 0;
+
+  if (noticeArticleList.length % 10 === 0) {
+    pagelength = parseInt(noticeArticleList.length / 10);
+  } else if (noticeArticleList.length <= 10) {
+    pagelength = 1;
+  } else {
+    pagelength = parseInt(noticeArticleList.length / 10) + 1;
+  }
+
+  const list = [];
+
+  for (let i = 1; i <= pagelength; i++) {
+    list.push(i);
+  }
+
+  let pages = [];
+  for (let i = 0; i <= pagelength; i++) {
+    pages[i] = new Array();
+  }
+
+  for (let i = 1; i <= pagelength; i++) {
+    for (let j = 10 * (i - 1); j < 10 * i; j++) {
+      if (noticeArticleList[j] === undefined) {
+        break;
+      }
+      pages[i].push(noticeArticleList[j]);
+    }
+  }
+
+  const pageNumberClick = (e) => {
+    setNumbering(e.target.textContent);
+  };
+
   return (
     <div className={styles.notice}>
       <div className={styles.container}>
@@ -23,13 +59,22 @@ const Notice = ({ notices, noticeRepository, authService, adminId }) => {
           <h2>공지사항</h2>
         </div>
         <div className={styles.board}>
-          {noticeArticleList.map((key) => (
+          {pages[numbering].map((key) => (
             <NoticeArticle key={key} noticeArticle={notices[key]} />
           ))}
         </div>
-        <button className={styles.write} onClick={write}>
-          글쓰기
-        </button>
+        <div className={styles.bottom}>
+          <ul className={styles.pagenum}>
+            {list.map((num) => (
+              <li key={num} className={styles.number} onClick={pageNumberClick}>
+                {num}
+              </li>
+            ))}
+          </ul>
+          <button className={styles.write} onClick={write}>
+            글쓰기
+          </button>
+        </div>
       </div>
     </div>
   );
