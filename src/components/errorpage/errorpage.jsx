@@ -1,19 +1,17 @@
 import React from "react";
-import styles from "./errorpage.module.css";
+import styles from "./errorPage.module.css";
 
-const Errorpage = (props) => {
+const ErrorPage = (props) => {
   return (
-    <section className={styles.errorpage}>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
-      <h1>에러입니다.</h1>
+    <section className={styles.errorPage}>
+      <img
+        src="../../images/surprise_con.png"
+        alt=""
+        className={styles.image}
+      />
+      <h1 className={styles.message}>페이지를 찾을 수 없습니다.</h1>
+      <h2 className={styles.message}>다시 시도해주세요.</h2>
     </section>
   );
 };
-export default Errorpage;
+export default ErrorPage;

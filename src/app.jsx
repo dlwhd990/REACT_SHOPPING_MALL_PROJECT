@@ -16,7 +16,7 @@ import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
 import Mypage from "./components/mypage/mypage";
-import Errorpage from "./components/errorpage/errorpage";
+import ErrorPage from "./components/errorpage/errorPage";
 import Loading from "./components/loading/loading";
 import NoticeWrite from "./components/notice/write/noticeWrite";
 import NoticeView from "./components/notice/noticeView/noticeView";
@@ -127,13 +127,15 @@ const App = ({
             <Intro />
           </Route>
           <Route exact path="/notice">
-            {notices && (
+            {notices ? (
               <Notice
                 noticeRepository={noticeRepository}
                 notices={notices}
                 authService={authService}
                 adminId={adminId}
               />
+            ) : (
+              <Loading />
             )}
           </Route>
           <Route exact path="/itemlist">
@@ -160,12 +162,14 @@ const App = ({
             {items ? <ItemView items={items} /> : <Loading />}
           </Route>
           <Route exact path="/articleview/:id">
-            {articles && (
+            {articles ? (
               <ArticleView
                 articles={articles}
                 userData={userData}
                 articleRepository={articleRepository}
               />
+            ) : (
+              <Loading />
             )}
           </Route>
           <Route exact path="/writearticle">
@@ -176,7 +180,7 @@ const App = ({
                 userData={userData}
               />
             ) : (
-              <Errorpage />
+              <ErrorPage />
             )}
           </Route>
           <Route exact path="/login">
@@ -207,12 +211,14 @@ const App = ({
             />
           </Route>
           <Route exact path="/noticearticleview/:id">
-            {notices && (
+            {notices ? (
               <NoticeView
                 notices={notices}
                 userData={userData}
                 noticeRepository={noticeRepository}
               />
+            ) : (
+              <Loading />
             )}
           </Route>
         </Switch>

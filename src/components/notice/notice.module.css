@@ -1,5 +1,5 @@
 .container {
-  width: 45%;
+  width: 50rem;
   height: 82vh;
   margin: auto;
   margin-top: 8rem;
@@ -20,19 +20,19 @@
 }
 
 .board {
-  width: 100%;
+  width: 50rem;
   height: 40rem;
   border: 1px solid lightgray;
 }
 
 .bottom {
-  width: 40rem;
+  width: 50rem;
   display: flex;
   flex-direction: row;
 }
 
 .pagenum {
-  width: 35rem;
+  width: 45rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,7 +43,7 @@
 }
 
 .number {
-  padding: 0 0.5rem;
+  padding: 0 0.8rem;
 }
 
 .write {
