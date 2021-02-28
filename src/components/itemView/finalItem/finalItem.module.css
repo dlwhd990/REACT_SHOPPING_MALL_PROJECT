@@ -1,0 +1,35 @@
+.finalItem {
+  margin: 1.4rem 0;
+  border-bottom: 1px solid gray;
+}
+
+.final_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.7rem 0;
+}
+
+.amount_change {
+  height: 2.2rem;
+}
+
+.show_amount,
+.minus,
+.plus {
+  width: 2.2rem;
+  height: 2.2rem;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.show_amount {
+  cursor: default;
+}
+
+.finalPrice {
+  margin-right: 1rem;
+}
