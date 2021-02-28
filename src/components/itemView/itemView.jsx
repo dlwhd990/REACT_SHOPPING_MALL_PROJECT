@@ -13,6 +13,7 @@ const ItemView = ({ items }) => {
   const [finalName, setFinalName] = useState(null);
   const [finalPrice, setFinalPrice] = useState(0);
   const [selectedList, setSelectedList] = useState(null);
+  const [bookmark, setBookmark] = useState(false);
   const [amount, setAmount] = useState(1);
 
   const originalPrice = items[id].price;
@@ -71,19 +72,32 @@ const ItemView = ({ items }) => {
     selectedKeyList = Object.keys(selectedList);
   }
 
-  console.log(selectedList);
-  console.log(selectedKeyList);
+  const bookmarking = () => {
+    setBookmark(!bookmark);
+  };
 
   return (
     <section className={styles.itemview}>
       <div className={styles.image_border}>
         <img src={items[id].imageURL} alt="" className={styles.image} />
+        <p className={styles.description}>{items[id].description}</p>
       </div>
       <div className={styles.info}>
-        <div className={styles.nameAndPrice}>
-          <h1 className={styles.name}>{items[id].name}</h1>
-          <h2 className={styles.price}>{`${items[id].price}원`}</h2>
+        <div className={styles.top}>
+          <div className={styles.nameAndPrice}>
+            <h1 className={styles.name}>{items[id].name}</h1>
+            <h2 className={styles.price}>{`${items[id].price}원`}</h2>
+          </div>
+          <button
+            className={`${styles.bookmark_button} ${
+              bookmark ? styles.on : styles.off
+            }`}
+            onClick={bookmarking}
+          >
+            {bookmark ? <i class="fas fa-star"></i> : "찜하기"}
+          </button>
         </div>
+
         <div className={styles.options}>
           <h3>옵션1</h3>
           <select className={styles.option} onChange={ItemPriceChange1}>
@@ -125,9 +139,10 @@ const ItemView = ({ items }) => {
           </div>
           <div className={styles.bottom}>
             <div className={styles.itemPrice_border}>
-              <h2 className={styles.itemPrice}>합계</h2>
-              <h1>{`${finalPrice}원`}</h1>
+              <h2>합계</h2>
+              <h1 className={styles.itemPrice}>{`${finalPrice}원`}</h1>
             </div>
+            <button className={styles.purchase_button}>구매하기</button>
           </div>
         </div>
       </div>
