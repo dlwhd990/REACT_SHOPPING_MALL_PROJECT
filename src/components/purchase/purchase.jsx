@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import styles from "./purchase.module.css";
 
 const Purchase = (props) => {

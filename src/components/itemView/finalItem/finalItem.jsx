@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./finalItem.module.css";
 
-const FinalItem = ({ item }) => {
+const FinalItem = ({ item, priceChangedByButton }) => {
   const [updatedAmount, setUpdatedAmount] = useState(item.amount);
+  const [updatedPrice, setUpdatedPrice] = useState(item.price);
+  const [originalPrice, setOriginalPrice] = useState(item.price);
   const onMinus = () => {
-    setUpdatedAmount(updatedAmount - 1);
-    console.log(item.amount);
+    if (updatedAmount >= 2) {
+      setUpdatedAmount(updatedAmount - 1);
+      console.log(item.amount);
+    }
   };
 
   const onPlus = () => {
@@ -19,8 +23,13 @@ const FinalItem = ({ item }) => {
 
   useEffect(() => {
     item.amount = updatedAmount;
+    item.price = originalPrice * updatedAmount;
+    setUpdatedPrice(item.price);
+    priceChangedByButton();
     console.log(`item amount = ${item.amount}`);
+    console.log(`item price = ${item.price}`);
   }, [updatedAmount]);
+
   return (
     <section className={styles.finalItem}>
       <p className={styles.finalItem_name}>{item.name}</p>
@@ -39,7 +48,7 @@ const FinalItem = ({ item }) => {
             +
           </button>
         </div>
-        <p className={styles.finalPrice}>{`${item.price}원`}</p>
+        <p className={styles.finalPrice}>{`${updatedPrice}원`}</p>
       </div>
     </section>
   );

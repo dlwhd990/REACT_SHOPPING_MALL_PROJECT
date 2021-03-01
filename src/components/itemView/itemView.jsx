@@ -59,6 +59,7 @@ const ItemView = ({ items }) => {
           id: id_newItem,
           name: finalName,
           price: itemPrice,
+          imageURL: items[id].imageURL,
           amount: 1,
         };
         return updated;
@@ -66,7 +67,14 @@ const ItemView = ({ items }) => {
     });
   }, [finalName]);
 
-  let selectedKeyList;
+  const priceChangedByButton = () => {
+    let newPrice = 0;
+    selectedKeyList.forEach((key) => (newPrice += selectedList[key].price));
+    setFinalPrice(newPrice);
+    console.log(selectedList);
+  };
+
+  let selectedKeyList = [];
 
   if (selectedList) {
     selectedKeyList = Object.keys(selectedList);
@@ -143,7 +151,11 @@ const ItemView = ({ items }) => {
           >
             {selectedList &&
               selectedKeyList.map((key) => (
-                <FinalItem key={key} item={selectedList[key]} />
+                <FinalItem
+                  key={key}
+                  item={selectedList[key]}
+                  priceChangedByButton={priceChangedByButton}
+                />
               ))}
           </div>
           <div className={styles.bottom}>
