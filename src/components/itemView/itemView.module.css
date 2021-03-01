@@ -1,14 +1,14 @@
 .itemview {
-  background-color: pink;
-  width: 65rem;
-  height: 49rem;
+  background-color: rgb(181, 228, 247);
+  width: 58rem;
+  height: 47rem;
   margin: auto;
   margin-top: 8rem;
+  margin-bottom: 6rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   border-radius: 1.5rem;
-  color: white;
 }
 
 .image_border {
@@ -20,8 +20,14 @@
   align-items: center;
 }
 
+.image_background {
+  border-radius: 1rem;
+  background-color: white;
+  width: 70%;
+}
+
 .image {
-  width: 60%;
+  width: 100%;
   border-radius: 1.5rem;
 }
 
@@ -42,17 +48,22 @@
 
 .name {
   padding-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 1.2rem;
 }
 
 .top {
   width: 100%;
-  flex-basis: 25%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 1rem;
   border-radius: 1.5rem;
-  background-color: lightpink;
+  background-color: rgb(203, 238, 253);
   margin-bottom: 1rem;
 }
 
@@ -65,10 +76,11 @@
 .bookmark_button {
   width: 4rem;
   height: 4rem;
-  margin: 3rem 1rem 0 0;
+  margin: 2rem 1rem 0 0;
   outline: none;
   border: 1px solid skyblue;
   background-color: white;
+  font-size: 1rem;
   border-radius: 0.7rem;
   cursor: pointer;
 }
@@ -84,10 +96,14 @@
 
 .options {
   width: 100%;
-  flex-basis: 75%;
-  background-color: lightpink;
+  height: 80%;
+  background-color: rgb(203, 238, 253);
   border-radius: 1.5rem;
   padding: 2rem 1rem;
+}
+
+.option_title {
+  font-size: 0.9rem;
 }
 
 .option {
@@ -115,14 +131,14 @@
 }
 
 .middlePrice {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .final {
   margin: 1rem 0;
   height: 9rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: none;
   overflow-y: auto;
 }
@@ -133,7 +149,7 @@
 
 .finalPrice {
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .bottom {

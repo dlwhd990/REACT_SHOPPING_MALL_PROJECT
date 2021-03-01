@@ -1,10 +1,8 @@
-@value color_skyBlue,color_pink,color_white from '../../common/colors.css';
-
 .footer {
-  background-color: color_skyBlue;
+  background-color: rgb(151, 209, 231);
   padding: 0.5rem;
   text-align: center;
-  color: color_white;
+  color: white;
 }
 
 p {

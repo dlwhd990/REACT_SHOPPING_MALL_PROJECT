@@ -22,7 +22,7 @@
 .board {
   width: 50rem;
   height: 40rem;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(192, 192, 192);
 }
 
 .bottom {
@@ -52,10 +52,18 @@
   font-size: 1.1rem;
   font-weight: 600;
   outline: none;
-  background-color: lightgray;
+  background-color: rgb(250, 245, 245);
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
+  outline: none;
+  transition: border, box-shadow 100ms ease;
+}
+
+.write:hover {
+  outline: none;
+  border: 1px solid rgb(248, 245, 245);
+  box-shadow: 0 0 2px 0;
 }
 
 @media screen and (max-width: 62rem) {

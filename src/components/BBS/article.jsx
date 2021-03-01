@@ -21,10 +21,12 @@ const Article = ({ article }) => {
       <span className={styles.title}>{convertedTitle}</span>
       <div className={styles.data}>
         <div className={styles.time}>
-          <span>{`${article.uploadDate} ${article.uploadTime}`}</span>
+          <span
+            className={styles.time_info}
+          >{`${article.uploadDate} ${article.uploadTime}`}</span>
         </div>
         <div className={styles.name}>
-          <span>{article.uploader}</span>
+          <span className={styles.time_info}>{article.uploader}</span>
         </div>
       </div>
     </section>

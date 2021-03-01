@@ -24,11 +24,6 @@
   width: 10rem;
 }
 
-.title {
-  margin-left: 0.7rem;
-  font-size: 1.8rem;
-}
-
 .list {
   display: flex;
   white-space: nowrap;
@@ -37,7 +32,7 @@
 .item {
   width: 8rem;
   margin: 0.5rem 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
   border-right: 1px solid lightgray;
   font-weight: 600;
@@ -50,7 +45,7 @@
 
 .loginButton {
   background-color: transparent;
-  border: 2px solid skyblue;
+  border: 2px solid rgb(151, 209, 231);
   border-radius: 4px;
   padding: 0.5rem;
   font-size: 0.8rem;
@@ -63,7 +58,7 @@
 }
 
 .loginButton:hover {
-  background-color: lightgreen;
+  background-color: rgb(223, 241, 248);
   opacity: 0.8;
 }
 
@@ -75,7 +70,7 @@
 
 .logoutButton {
   background-color: transparent;
-  border: 2px solid skyblue;
+  border: 2px solid rgb(151, 209, 231);
   border-radius: 4px;
   padding: 0.5rem;
   font-size: 0.8rem;
@@ -88,7 +83,7 @@
 
 .mypage {
   background-color: transparent;
-  border: 2px solid skyblue;
+  border: 2px solid rgb(151, 209, 231);
   border-radius: 4px;
   padding: 0.5rem;
   font-size: 0.8rem;
@@ -101,12 +96,12 @@
 }
 
 .logoutButton:hover {
-  background-color: rgb(236, 234, 234);
+  background-color: rgb(223, 241, 248);
   opacity: 0.8;
 }
 
 .mypage:hover {
-  background-color: rgb(236, 234, 234);
+  background-color: rgb(223, 241, 248);
   opacity: 0.8;
 }
 

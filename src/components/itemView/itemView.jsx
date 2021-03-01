@@ -96,7 +96,9 @@ const ItemView = ({ items }) => {
   return (
     <section className={styles.itemview}>
       <div className={styles.image_border}>
-        <img src={items[id].imageURL} alt="" className={styles.image} />
+        <div className={styles.image_background}>
+          <img src={items[id].imageURL} alt="" className={styles.image} />
+        </div>
         <p className={styles.description}>{items[id].description}</p>
       </div>
       <div className={styles.info}>
@@ -116,7 +118,7 @@ const ItemView = ({ items }) => {
         </div>
 
         <div className={styles.options}>
-          <h3>옵션1</h3>
+          <h3 className={styles.option_title}>옵션1</h3>
           <select className={styles.option} onChange={ItemPriceChange1}>
             {option1_idlist.map((key) => (
               <option key={key} value={key}>
@@ -124,7 +126,7 @@ const ItemView = ({ items }) => {
               </option>
             ))}
           </select>
-          <h3>옵션2</h3>
+          <h3 className={styles.option_title}>옵션2</h3>
           <select
             name="option2"
             id=""

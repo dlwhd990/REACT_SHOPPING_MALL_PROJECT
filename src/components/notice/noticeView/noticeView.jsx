@@ -54,12 +54,6 @@ const NoticeView = ({ userData, notices, noticeRepository }) => {
         </div>
         <h2 className={styles.title}>{notices[id].title}</h2>
         <p className={styles.content}>{notices[id].content}</p>
-        <div className={styles.evaluation}>
-          <button className={styles.likeButton}>
-            <i className="far fa-thumbs-up"></i>
-          </button>
-          <span className={styles.likeCount}>0</span>
-        </div>
       </div>
     </section>
   );

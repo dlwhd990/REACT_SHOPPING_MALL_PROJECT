@@ -44,12 +44,18 @@
   width: 3rem;
   height: 2rem;
   font-size: 1rem;
-  background-color: lightgray;
   border: none;
+  background-color: lightpink;
+  color: white;
   outline: none;
   cursor: pointer;
   border-radius: 4px;
   display: none;
+  transition: transform 200ms ease-in;
+}
+
+.deleteButton:hover {
+  transform: scale(1.05);
 }
 
 .deleteButton.deleteOn {
@@ -72,20 +78,36 @@
 }
 
 .evaluation {
-  position: relative;
-  left: 92%;
-  width: 3rem;
-  padding: 0;
-  color: red;
-  cursor: pointer;
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.likeCount {
   font-size: 1.1rem;
+  padding: 0.5rem 0;
+  width: 5rem;
+  border-bottom: 2px solid rgb(151, 209, 231);
+}
+
+.likeCount.on {
+  background-color: rgb(223, 241, 248);
+  border: 2px solid rgb(151, 209, 231);
+  border-radius: 4px;
 }
 
 .likeButton {
+  width: 5rem;
+  height: 3rem;
   border: none;
   outline: none;
-  background-color: transparent;
+  background-color: white;
   cursor: pointer;
-  font-size: 1.1rem;
-  color: red;
+  transition: all 200ms ease-in;
+}
+
+.likeButton:hover {
+  transform: scale(1.05);
 }

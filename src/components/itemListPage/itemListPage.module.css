@@ -24,7 +24,7 @@
 .select {
   cursor: pointer;
   padding: 0.3rem;
-  margin: 2rem;
+  margin: 1rem 2rem 0 2rem;
   background-color: transparent;
   border: none;
   outline: none;

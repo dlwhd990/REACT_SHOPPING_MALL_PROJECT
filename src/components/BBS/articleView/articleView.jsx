@@ -96,9 +96,15 @@ const ArticleView = ({ userData, articles, articleRepository }) => {
         <h2 className={styles.title}>{articles[id].title}</h2>
         <p className={styles.content}>{articles[id].content}</p>
         <div className={styles.evaluation}>
-          <button className={styles.likeButton} onClick={changeLikeCount}>
-            <i className="far fa-thumbs-up"></i>
-            <span className={styles.likeCount}>{likeCount}</span>
+          <button
+            className={`${styles.likeButton} ${liked ? styles.on : styles.off}`}
+            onClick={changeLikeCount}
+          >
+            <p
+              className={`${styles.likeCount} ${
+                liked ? styles.on : styles.off
+              }`}
+            >{`좋아요 ${likeCount}`}</p>
           </button>
         </div>
       </div>

@@ -205,7 +205,7 @@ const App = ({
             />
           </Route>
           <Route exact path="/noticearticleview/:id">
-            {notices ? (
+            {notices && userData ? (
               <NoticeView
                 notices={notices}
                 userData={userData}
