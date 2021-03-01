@@ -8,7 +8,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Intro from "./components/introduction/intro";
 import ItemListPage from "./components/itemListPage/itemListPage";
 import Notice from "./components/notice/notice";
-import EventPage from "./components/eventPage/eventPage";
 import CustomerCenter from "./components/customerCenter/customerCenter";
 import Bbs from "./components/BBS/bbs";
 import ItemView from "./components/itemView/itemView";
@@ -16,10 +15,11 @@ import ArticleView from "./components/BBS/articleView/articleView";
 import Write from "./components/BBS/write/write";
 import Login from "./components/login/login";
 import Mypage from "./components/mypage/mypage";
-import ErrorPage from "./components/errorpage/errorPage";
+import ErrorPage from "./components/errorpage/errorpage";
 import Loading from "./components/loading/loading";
 import NoticeWrite from "./components/notice/write/noticeWrite";
 import NoticeView from "./components/notice/noticeView/noticeView";
+import Purchase from "./components/purchase/purchase";
 
 const App = ({
   authService,
@@ -37,11 +37,7 @@ const App = ({
 
   const [inherentId, setInherentId] = useState(null);
 
-  const [userData, setUserData] = useState({
-    id: null,
-    nickname: null,
-    imageURL: null,
-  });
+  const [userData, setUserData] = useState(null);
 
   const [notices, setNotices] = useState(null);
 
@@ -139,15 +135,13 @@ const App = ({
             )}
           </Route>
           <Route exact path="/itemlist">
-            {items ? (
+            {items && userData ? (
               <ItemListPage items={items} userData={userData} />
             ) : (
               <Loading />
             )}
           </Route>
-          <Route exact path="/event">
-            <EventPage />
-          </Route>
+
           <Route exact path="/bbs">
             {articles ? (
               <Bbs articles={articles} authService={authService} />
@@ -162,7 +156,7 @@ const App = ({
             {items ? <ItemView items={items} /> : <Loading />}
           </Route>
           <Route exact path="/articleview/:id">
-            {articles ? (
+            {articles && userData ? (
               <ArticleView
                 articles={articles}
                 userData={userData}
@@ -173,7 +167,7 @@ const App = ({
             )}
           </Route>
           <Route exact path="/writearticle">
-            {userData.id ? (
+            {userData ? (
               <Write
                 uploadArticle={uploadArticle}
                 authService={authService}
@@ -191,7 +185,7 @@ const App = ({
             />
           </Route>
           <Route exact path="/mypage/:id">
-            {userData.id ? (
+            {userData ? (
               <Mypage
                 authService={authService}
                 ImageInputRound={ImageInputRound}
@@ -221,10 +215,12 @@ const App = ({
               <Loading />
             )}
           </Route>
+          <Route exact path="/purchase">
+            <Purchase />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
   );
 };
-
 export default App;

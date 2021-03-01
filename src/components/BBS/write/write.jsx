@@ -28,6 +28,8 @@ const Write = ({ userData, uploadArticle, authService }) => {
         uploader: userData.nickname,
         uploaderId: userData.id,
         uploaderProfileImage: userData.imageURL,
+        likeCount: 0,
+        liked: { id: { id: userData.id } },
       };
 
       uploadArticle(newArticle);

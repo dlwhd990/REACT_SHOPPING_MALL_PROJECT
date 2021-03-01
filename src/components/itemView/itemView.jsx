@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import FinalItem from "./finalItem/finalItem";
 import styles from "./itemView.module.css";
 
 const ItemView = ({ items }) => {
   const { id } = useParams();
+  const history = useHistory();
   const [itemPrice, setItemPrice] = useState(parseInt(items[id].price));
   const [option1Price, setOption1Price] = useState(0);
   const [option2Price, setOption2Price] = useState(0);
@@ -14,7 +15,6 @@ const ItemView = ({ items }) => {
   const [finalPrice, setFinalPrice] = useState(0);
   const [selectedList, setSelectedList] = useState(null);
   const [bookmark, setBookmark] = useState(false);
-  const [amount, setAmount] = useState(1);
 
   const originalPrice = items[id].price;
   const option1 = items[id].option1;
@@ -76,6 +76,15 @@ const ItemView = ({ items }) => {
     setBookmark(!bookmark);
   };
 
+  const onPurchase = () => {
+    if (!selectedList) {
+      window.alert("상품 선택 후 구매 가능합니다.");
+    } else {
+      history.push("/purchase", { list: selectedList, finalPrice: finalPrice });
+      console.log(selectedList);
+    }
+  };
+
   return (
     <section className={styles.itemview}>
       <div className={styles.image_border}>
@@ -94,7 +103,7 @@ const ItemView = ({ items }) => {
             }`}
             onClick={bookmarking}
           >
-            {bookmark ? <i class="fas fa-star"></i> : "찜하기"}
+            {bookmark ? <i className="fas fa-star"></i> : "찜하기"}
           </button>
         </div>
 
@@ -142,7 +151,9 @@ const ItemView = ({ items }) => {
               <h2>합계</h2>
               <h1 className={styles.itemPrice}>{`${finalPrice}원`}</h1>
             </div>
-            <button className={styles.purchase_button}>구매하기</button>
+            <button className={styles.purchase_button} onClick={onPurchase}>
+              구매하기
+            </button>
           </div>
         </div>
       </div>

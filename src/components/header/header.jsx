@@ -93,7 +93,7 @@ const Header = ({ logout, userData }) => {
       <div className={styles.buttons}>
         <button
           className={`${styles.loginButton} ${
-            userData.id ? styles.onlogin : styles.onlogout
+            userData && (userData.id ? styles.onlogin : styles.onlogout)
           }`}
           onClick={goLogin}
         >
@@ -101,7 +101,7 @@ const Header = ({ logout, userData }) => {
         </button>
         <div
           className={`${styles.logedin} ${
-            userData.id ? styles.onlogin : styles.onlogout
+            userData && (userData.id ? styles.onlogin : styles.onlogout)
           }`}
         >
           <button className={styles.mypage} onClick={goMyPage}>
