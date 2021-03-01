@@ -26,8 +26,6 @@ const FinalItem = ({ item, priceChangedByButton }) => {
     item.price = originalPrice * updatedAmount;
     setUpdatedPrice(item.price);
     priceChangedByButton();
-    console.log(`item amount = ${item.amount}`);
-    console.log(`item price = ${item.price}`);
   }, [updatedAmount]);
 
   return (

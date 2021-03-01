@@ -63,11 +63,10 @@ const Header = ({ logout, userData }) => {
     <section className={styles.header}>
       <div className={styles.logo} onClick={goHome}>
         <img
-          src="../../images/logo.png"
+          src="../../images/logo_title.png"
           alt="logo__image"
           className={styles.image}
         />
-        <h1 className={styles.title}>콘스</h1>
       </div>
       <ul className={styles.list}>
         <li className={styles.item} onClick={goHome}>
@@ -86,7 +85,10 @@ const Header = ({ logout, userData }) => {
         <li className={styles.item} onClick={goBBS}>
           게시판
         </li>
-        <li className={styles.item} onClick={goCustomerCenter}>
+        <li
+          className={`${styles.item} ${styles.last}`}
+          onClick={goCustomerCenter}
+        >
           고객지원
         </li>
       </ul>
