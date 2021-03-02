@@ -20,20 +20,14 @@
   align-items: center;
 }
 
-.image_background {
-  border-radius: 1rem;
-  background-color: white;
-  width: 70%;
-}
-
 .image {
-  width: 100%;
+  width: 70%;
   border-radius: 1.5rem;
 }
 
 .description {
   font-size: 1.3rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .info {

@@ -35,10 +35,10 @@ export default class SimpleSlider extends Component {
             <Image src="./images/banner.jpg" alt="" />
           </div>
           <div>
-            <Image src="./images/friends.png" alt="" />
+            <Image src="./images/friends2.jpg" alt="" />
           </div>
           <div>
-            <Image src="./images/friends.png" alt="" />
+            <Image src="./images/friends1.jpg" alt="" />
           </div>
           <div>
             <Image src="./images/logo.png" alt="" />

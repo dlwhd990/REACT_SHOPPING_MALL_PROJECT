@@ -58,12 +58,13 @@
   cursor: pointer;
   outline: none;
   transition: border, box-shadow 100ms ease;
+  margin-top: 0.1rem;
 }
 
 .write:hover {
   outline: none;
-  border: 1px solid rgb(248, 245, 245);
-  box-shadow: 0 0 2px 0;
+  border: 1px solid rgb(224, 211, 211);
+  box-shadow: 0 0 2px 0 lightgray;
 }
 
 @media screen and (max-width: 62rem) {

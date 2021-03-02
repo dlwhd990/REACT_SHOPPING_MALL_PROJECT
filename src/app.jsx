@@ -81,7 +81,15 @@ const App = ({
 
   useEffect(() => {
     const tmp = authService.check();
-    tmp && setInherentId(tmp.uid);
+    if (tmp) {
+      setInherentId(tmp.uid);
+    } else {
+      setUserData({
+        id: null,
+        nickname: null,
+        imageURL: null,
+      });
+    }
     console.log(inherentId);
   });
 
@@ -153,7 +161,11 @@ const App = ({
             <CustomerCenter />
           </Route>
           <Route exact path="/itemview/:id">
-            {items ? <ItemView items={items} /> : <Loading />}
+            {items && userData ? (
+              <ItemView items={items} userData={userData} />
+            ) : (
+              <Loading />
+            )}
           </Route>
           <Route exact path="/articleview/:id">
             {articles && userData ? (

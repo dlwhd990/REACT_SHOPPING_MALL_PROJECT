@@ -1,14 +1,37 @@
 .info {
-  padding: 3rem 0 0 3rem;
-  margin-left: 0.9rem;
+  padding: 5rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.description_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 2rem;
+}
+
+.description {
+  padding: 0 2rem;
+}
+
+.divider {
+  margin-top: 1rem;
+  width: 32%;
+  height: 1px;
+  background-color: lightgray;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
 }

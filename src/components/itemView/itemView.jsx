@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import FinalItem from "./finalItem/finalItem";
 import styles from "./itemView.module.css";
 
-const ItemView = ({ items }) => {
+const ItemView = ({ items, userData }) => {
   const { id } = useParams();
   const history = useHistory();
   const [itemPrice, setItemPrice] = useState(parseInt(items[id].price));
@@ -88,17 +88,22 @@ const ItemView = ({ items }) => {
     if (!selectedList) {
       window.alert("상품 선택 후 구매 가능합니다.");
     } else {
-      history.push("/purchase", { list: selectedList, finalPrice: finalPrice });
-      console.log(selectedList);
+      if (userData.id === null) {
+        window.alert("로그인 후 구매 가능합니다.");
+      } else {
+        history.push("/purchase", {
+          list: selectedList,
+          finalPrice: finalPrice,
+        });
+        console.log(selectedList);
+      }
     }
   };
 
   return (
     <section className={styles.itemview}>
       <div className={styles.image_border}>
-        <div className={styles.image_background}>
-          <img src={items[id].imageURL} alt="" className={styles.image} />
-        </div>
+        <img src={items[id].imageURL} alt="" className={styles.image} />
         <p className={styles.description}>{items[id].description}</p>
       </div>
       <div className={styles.info}>

@@ -13,8 +13,12 @@ const NewItems = ({ items, itemList }) => {
   return (
     <section className={styles.newItems}>
       <div className={styles.info}>
-        <h1 className={styles.title}>🎉New</h1>
-        <p className={styles.description}>꼭! 체크해봐야할 신상들이에요</p>
+        <h1 className={styles.title}>NEW</h1>
+        <div className={styles.description_box}>
+          <div className={styles.divider}></div>
+          <p className={styles.description}>꼭! 체크해봐야 할 신상들이에요</p>
+          <div className={styles.divider}></div>
+        </div>
       </div>
       <div className={styles.list}>
         {itemList.map((key) => (

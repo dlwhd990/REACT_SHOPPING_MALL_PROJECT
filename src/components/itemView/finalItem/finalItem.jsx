@@ -17,10 +17,6 @@ const FinalItem = ({ item, priceChangedByButton }) => {
     console.log(item.amount);
   };
 
-  const amountChange = (e) => {
-    setUpdatedAmount(e.tartget.value);
-  };
-
   useEffect(() => {
     item.amount = updatedAmount;
     item.price = originalPrice * updatedAmount;
@@ -40,7 +36,6 @@ const FinalItem = ({ item, priceChangedByButton }) => {
             type="text"
             className={styles.show_amount}
             value={updatedAmount}
-            onChange={amountChange}
           />
           <button className={styles.plus} onClick={onPlus}>
             +
