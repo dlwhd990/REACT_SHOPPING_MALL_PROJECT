@@ -90,6 +90,9 @@ const App = ({
         imageURL: null,
       });
     }
+  }, [authService.check()]);
+
+  useEffect(() => {
     console.log(inherentId);
   });
 
@@ -197,7 +200,7 @@ const App = ({
             />
           </Route>
           <Route exact path="/mypage/:id">
-            {userData ? (
+            {userData && inherentId ? (
               <Mypage
                 authService={authService}
                 ImageInputRound={ImageInputRound}

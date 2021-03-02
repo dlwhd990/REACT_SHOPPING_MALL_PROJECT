@@ -7,8 +7,7 @@ const Mypage = ({
   userData,
   authService,
 }) => {
-  let nameRef = useRef();
-
+  const nameRef = useRef();
   const [file, setFile] = useState(userData.imageURL);
   const [updated, setUpdated] = useState({
     id: userData.id,
@@ -41,9 +40,14 @@ const Mypage = ({
 
   useEffect(() => {
     if (dataSaveCall) {
-      userDataRepository.saveUserData(userData.id, updated);
-      setDataSaveCall(!dataSaveCall);
-      window.alert("회원정보가 수정되었습니다.");
+      if (nameRef.current.value.length > 6) {
+        window.alert("닉네임은 6글자 이하만 가능합니다.");
+        nameRef.current.value = userData.nickname;
+      } else {
+        userDataRepository.saveUserData(userData.id, updated);
+        setDataSaveCall(!dataSaveCall);
+        window.alert("회원정보가 수정되었습니다.");
+      }
     }
   }, [dataSaveCall]);
 
