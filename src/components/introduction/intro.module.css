@@ -2,9 +2,157 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8rem;
+  margin: 8rem 0;
 }
 
-.intro_image {
-  width: 10rem;
+.title {
+  font-size: 4rem;
+  margin: 2rem 0 23rem 0;
+}
+
+.little_friends_image {
+  width: 50rem;
+  border-radius: 1rem;
+}
+
+.info_title {
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.info_box {
+  width: 50rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.top,
+.bottom {
+  width: 50rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.apeach {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(246, 188, 184);
+  border-radius: 1rem 0 0 0;
+  transition: transform 150ms ease-in;
+}
+
+.muzi {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 221, 120);
+  transition: transform 150ms ease-in;
+}
+
+.con {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(193, 220, 151);
+  transition: transform 150ms ease-in;
+}
+
+.ryan {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(162, 201, 230);
+  border-radius: 0 1rem 0 0;
+  transition: transform 150ms ease-in;
+}
+
+.tube {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(162, 214, 212);
+  border-radius: 0 0 0 1rem;
+  transition: transform 150ms ease-in;
+}
+
+.jayg {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(211, 191, 166);
+  transition: transform 150ms ease-in;
+}
+
+.neo {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 187, 183);
+  transition: transform 150ms ease-in;
+}
+
+.frodo {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(127, 199, 239);
+  border-radius: 0 0 1rem 0;
+  transition: transform 150ms ease-in;
+}
+
+.name {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.char_img {
+  height: 9rem;
+  margin: 0.6rem 0;
+}
+
+.char_img.con {
+  width: 7rem;
+  height: 7rem;
+  margin: 1.55rem 0 1.74rem 0;
+}
+
+.name_kor {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 0.9rem;
+}
+
+.apeach:hover,
+.muzi:hover,
+.con:hover,
+.ryan:hover,
+.tube:hover,
+.jayg:hover,
+.neo:hover,
+.frodo:hover {
+  transform: scale(1.03);
 }
