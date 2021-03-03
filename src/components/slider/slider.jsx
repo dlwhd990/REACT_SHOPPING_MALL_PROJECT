@@ -1,56 +1,107 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Slider from "react-slick";
-import styles from "./slider.module.css";
 import "slick-carousel/slick/slick.css";
+import styles from "./slider.module.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Container = styled.div`
-  overflow: hidden;
-`;
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        width: 50,
+        height: 50,
+        right: 15,
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
-const StyledSlider = styled(Slider)`
-  .slick-slide div {
-    outline: none;
-  }
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 35rem;
-`;
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        width: 50,
+        height: 50,
+        left: 15,
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
+      autoplay: true,
+      autoplaySpeed: 3500,
+      pauseOnHover: true,
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      arrows: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
     };
     return (
-      <Container>
-        <StyledSlider {...settings}>
-          <div>
-            <Image src="./images/banner.jpg" alt="" />
+      <div className={styles.slider}>
+        <Slider {...settings}>
+          <div className={styles.image_box}>
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
           <div>
-            <Image src="./images/friends2.jpg" alt="" />
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
           <div>
-            <Image src="./images/friends1.jpg" alt="" />
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
           <div>
-            <Image src="./images/logo.png" alt="" />
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
           <div>
-            <Image src="./images/logo.png" alt="" />
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
           <div>
-            <h3>6</h3>
+            <img
+              src="../../images/banner.jpg"
+              alt=""
+              className={styles.image}
+            />
           </div>
-        </StyledSlider>
-      </Container>
+        </Slider>
+      </div>
     );
   }
 }

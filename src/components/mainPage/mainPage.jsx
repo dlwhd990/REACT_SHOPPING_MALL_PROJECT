@@ -8,9 +8,7 @@ const MainPage = ({ items }) => {
   const itemList = Object.keys(items);
   return (
     <section className={styles.mainPage}>
-      <div className={styles.slider}>
-        <SimpleSlider />
-      </div>
+      <SimpleSlider />
       <div className={styles.popular}>
         <Popular itemList={itemList} items={items} />
       </div>

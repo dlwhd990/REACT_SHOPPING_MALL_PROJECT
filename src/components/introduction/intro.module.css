@@ -7,12 +7,13 @@
 
 .title {
   font-size: 4rem;
-  margin: 2rem 0 23rem 0;
+  margin-bottom: 2rem;
 }
 
 .little_friends_image {
   width: 50rem;
   border-radius: 1rem;
+  margin-bottom: 23rem;
 }
 
 .info_title {

@@ -4,12 +4,12 @@ import styles from "./intro.module.css";
 const Intro = (props) => {
   return (
     <section className={styles.intro}>
+      <h1 className={styles.title}>카카오 프렌즈를 소개합니다</h1>
       <img
         src="../../images/little_friends.png"
         alt=""
         className={styles.little_friends_image}
       />
-      <h1 className={styles.title}>카카오 프렌즈를 소개합니다</h1>
 
       <h2 className={styles.info_title}>알고 싶은 프렌즈를 골라보세요</h2>
       <div className={styles.info_box}>

@@ -1,0 +1,13 @@
+.slider {
+  width: 100%;
+  outline: none;
+}
+
+.image {
+  width: 100%;
+  outline: none;
+}
+
+.next_button {
+  color: black;
+}
