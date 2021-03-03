@@ -8,6 +8,7 @@ const Login = ({ pressLoginButton, authService, userDataRepository }) => {
   const afterLogin = (userId) => {
     pressLoginButton();
     userDataRepository.checkUserData(userId);
+    history.push("/");
     window.location.reload();
   };
 

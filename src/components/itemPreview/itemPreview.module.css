@@ -8,7 +8,7 @@
   border: none;
   cursor: pointer;
   transition: transform 150ms ease-in;
-  margin: 0.6rem;
+  margin: 0.2rem;
 }
 
 .item:hover {
