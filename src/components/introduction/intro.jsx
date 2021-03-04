@@ -5,13 +5,6 @@ const Intro = (props) => {
   return (
     <section className={styles.intro}>
       <h1 className={styles.title}>카카오 프렌즈를 소개합니다</h1>
-      <img
-        src="../../images/little_friends.png"
-        alt=""
-        className={styles.little_friends_image}
-      />
-
-      <h2 className={styles.info_title}>알고 싶은 프렌즈를 골라보세요</h2>
       <div className={styles.info_box}>
         <div className={styles.top}>
           <div className={styles.apeach}>
@@ -60,7 +53,7 @@ const Intro = (props) => {
         </div>
         <div className={styles.bottom}>
           <div className={styles.tube}>
-            <p className={styles.name}>TUBE</p>
+            <h2 className={styles.name}>TUBE</h2>
             <img
               src="../../images/tube.png"
               alt=""

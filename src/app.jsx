@@ -200,7 +200,7 @@ const App = ({
             />
           </Route>
           <Route exact path="/mypage/:id">
-            {userData && inherentId ? (
+            {inherentId && userData.id ? (
               <Mypage
                 authService={authService}
                 ImageInputRound={ImageInputRound}

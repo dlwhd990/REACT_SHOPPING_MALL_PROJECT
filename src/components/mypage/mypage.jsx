@@ -15,8 +15,6 @@ const Mypage = ({
     imageURL: userData.imageURL,
   });
   const [dataSaveCall, setDataSaveCall] = useState(false);
-  console.log(updated);
-  console.log(file);
   const [tmpName, setTmpName] = useState(userData.nickname);
 
   const onFileChange = (newfile) => {

@@ -7,18 +7,7 @@
 
 .title {
   font-size: 4rem;
-  margin-bottom: 2rem;
-}
-
-.little_friends_image {
-  width: 50rem;
-  border-radius: 1rem;
-  margin-bottom: 23rem;
-}
-
-.info_title {
-  margin-bottom: 2rem;
-  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
 }
 
 .info_box {
@@ -26,7 +15,6 @@
   height: 40rem;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
   cursor: pointer;
 }
 
@@ -45,7 +33,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(246, 188, 184);
-  border-radius: 1rem 0 0 0;
+  border-radius: 0.5rem 0 0 0;
   transition: transform 150ms ease-in;
 }
 
@@ -76,7 +64,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(162, 201, 230);
-  border-radius: 0 1rem 0 0;
+  border-radius: 0 0.5rem 0 0;
   transition: transform 150ms ease-in;
 }
 
@@ -87,7 +75,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(162, 214, 212);
-  border-radius: 0 0 0 1rem;
+  border-radius: 0 0 0 0.5rem;
   transition: transform 150ms ease-in;
 }
 
@@ -118,7 +106,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(127, 199, 239);
-  border-radius: 0 0 1rem 0;
+  border-radius: 0 0 0.5rem 0;
   transition: transform 150ms ease-in;
 }
 

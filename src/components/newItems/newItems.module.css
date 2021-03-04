@@ -1,5 +1,5 @@
 .info {
-  padding: 5rem 0 0 3rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,4 +33,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 3rem;
 }
