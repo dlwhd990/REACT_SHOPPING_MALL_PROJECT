@@ -2,19 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./modal.module.css";
 
 const Modal = ({ friend, closeModal }) => {
-  console.log("MODAL ON");
-  const [clickButton, setClickButton] = useState(false);
-
-  const onClick = () => {
-    setClickButton(true);
-  };
-
-  useEffect(() => {
-    if (clickButton === true) {
-      closeModal();
-      setClickButton(false);
-    }
-  }, [clickButton]);
   return (
     <div className={styles.modal}>
       <div className={styles.container}>
@@ -25,7 +12,7 @@ const Modal = ({ friend, closeModal }) => {
           <h2 className={styles.name}>{friend.name}</h2>
           <p className={styles.description}>{friend.description}</p>
         </div>
-        <button className={styles.close} onClick={onClick}>
+        <button className={styles.close} onClick={closeModal}>
           <i className="fas fa-times"></i>
         </button>
       </div>

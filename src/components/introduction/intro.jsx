@@ -4,7 +4,6 @@ import Modal from "./modal/modal";
 
 const Intro = (props) => {
   const [selected, setSelected] = useState(null);
-  const [friend, setFriend] = useState(null);
 
   const friends = {
     1: {
@@ -66,16 +65,16 @@ const Intro = (props) => {
   };
 
   const viewModal = (e) => {
-    setSelected(e.target.parentNode.id);
+    if (e.target.id === "") {
+      setSelected(e.target.parentNode.id);
+    } else {
+      setSelected(e.target.id);
+    }
   };
 
   const closeModal = () => {
     setSelected(null);
   };
-
-  useEffect(() => {
-    setFriend(friends[selected]);
-  }, [selected]);
 
   return (
     <section className={styles.intro}>
@@ -172,9 +171,9 @@ const Intro = (props) => {
           </div>
         </div>
       </div>
-      {friend && (
+      {selected && (
         <div className={styles.modal}>
-          <Modal closeModal={closeModal} friend={friend} />
+          <Modal closeModal={closeModal} friend={friends[selected]} />
         </div>
       )}
     </section>
