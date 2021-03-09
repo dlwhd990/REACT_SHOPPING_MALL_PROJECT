@@ -14,7 +14,6 @@ const ItemView = ({ items, userData }) => {
   const [finalName, setFinalName] = useState(null);
   const [finalPrice, setFinalPrice] = useState(0);
   const [selectedList, setSelectedList] = useState(null);
-  const [bookmark, setBookmark] = useState(false);
 
   const originalPrice = items[id].price;
   const option1 = items[id].option1;
@@ -80,10 +79,6 @@ const ItemView = ({ items, userData }) => {
     selectedKeyList = Object.keys(selectedList);
   }
 
-  const bookmarking = () => {
-    setBookmark(!bookmark);
-  };
-
   const onPurchase = () => {
     if (!selectedList) {
       window.alert("상품 선택 후 구매 가능합니다.");
@@ -112,14 +107,6 @@ const ItemView = ({ items, userData }) => {
             <h1 className={styles.name}>{items[id].name}</h1>
             <h2 className={styles.price}>{`${items[id].price}원`}</h2>
           </div>
-          <button
-            className={`${styles.bookmark_button} ${
-              bookmark ? styles.on : styles.off
-            }`}
-            onClick={bookmarking}
-          >
-            {bookmark ? <i className="fas fa-star"></i> : "찜하기"}
-          </button>
         </div>
 
         <div className={styles.options}>

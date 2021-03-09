@@ -41,6 +41,8 @@ const App = ({
 
   const [notices, setNotices] = useState(null);
 
+  const [toggle, setToggle] = useState(false);
+
   const pressLoginButton = (id) => {
     setInherentId(id);
   };
@@ -121,10 +123,25 @@ const App = ({
     return () => stopSync();
   }, []);
 
+  const toggleOff = () => {
+    if (toggle) {
+      setToggle(false);
+    }
+  };
+
+  const toggleOn = () => {
+    setToggle(true);
+  };
+
   return (
-    <div className={styles.app}>
+    <div className={styles.app} onClick={toggleOff}>
       <BrowserRouter>
-        <Header logout={logout} userData={userData} />
+        <Header
+          logout={logout}
+          userData={userData}
+          toggle={toggle}
+          toggleOn={toggleOn}
+        />
         <Switch>
           <Route exact path="/">
             {items ? <MainPage items={items} /> : <Loading />}
