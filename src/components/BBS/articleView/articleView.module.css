@@ -1,13 +1,12 @@
 .articleView {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .container {
+  width: 40%;
   border: 2px solid lightgray;
-  width: 45%;
   padding: 2rem;
   margin: 8rem 0;
 }
@@ -16,6 +15,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.uploader {
+  width: 6.5rem;
 }
 
 .userdata {
@@ -110,4 +113,10 @@
 
 .likeButton:hover {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 49rem) {
+  .container {
+    width: 90%;
+  }
 }

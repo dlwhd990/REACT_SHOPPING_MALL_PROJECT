@@ -10,8 +10,11 @@ const Article = ({ article }) => {
     history.push(`/articleview/${article.id}`);
   };
   let convertedTitle;
-  if (article.title.length > 35) {
+
+  if (article.title.length > 35 && window.innerWidth > 784) {
     convertedTitle = article.title.slice(0, 35) + "...";
+  } else if (article.title.length > 12 && window.innerWidth <= 784) {
+    convertedTitle = article.title.slice(0, 12) + "...";
   } else {
     convertedTitle = article.title;
   }

@@ -119,7 +119,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 49rem) {
+@media screen and (max-width: 76rem) {
   .header {
     flex-direction: column;
   }

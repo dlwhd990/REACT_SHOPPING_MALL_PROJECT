@@ -40,7 +40,9 @@ const Mypage = ({
     if (dataSaveCall) {
       if (nameRef.current.value.length > 6) {
         window.alert("닉네임은 6글자 이하만 가능합니다.");
-        nameRef.current.value = userData.nickname;
+        nameRef.current.value = "";
+      } else if (nameRef.current.value.length === 0) {
+        window.alert("닉네임을 입력해주세요");
       } else {
         userDataRepository.saveUserData(userData.id, updated);
         setDataSaveCall(!dataSaveCall);

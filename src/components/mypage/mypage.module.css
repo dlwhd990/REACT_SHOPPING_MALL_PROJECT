@@ -1,9 +1,8 @@
 .mypage {
-  margin: 6rem 2rem;
+  margin: 16rem 2rem;
 }
 
 .container {
-  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,4 +77,30 @@
 .save_button:hover {
   border: 1px solid rgb(224, 211, 211);
   box-shadow: 0 0 2px 0 lightgray;
+}
+
+@media screen and (max-width: 49rem) {
+  .mypage {
+    margin: 0;
+    margin-top: 10rem;
+  }
+
+  .info {
+    width: 90%;
+  }
+  .info_top {
+    flex-direction: column;
+  }
+
+  .part_image {
+    margin-bottom: 1.2rem;
+  }
+
+  .top_right {
+    padding-right: 2rem;
+  }
+
+  .part_name {
+    padding-bottom: 1rem;
+  }
 }

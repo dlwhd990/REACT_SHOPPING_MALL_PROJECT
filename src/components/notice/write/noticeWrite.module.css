@@ -63,3 +63,18 @@ p {
   outline: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 49rem) {
+  .write {
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+  }
+
+  .writeform {
+    width: 90%;
+  }
+
+  .buttons {
+    width: 90%;
+  }
+}

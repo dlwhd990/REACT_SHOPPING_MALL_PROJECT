@@ -21,7 +21,9 @@ const NoticeArticle = ({ noticeArticle }) => {
       <span className={styles.title}>{convertedTitle}</span>
       <div className={styles.data}>
         <div className={styles.time}>
-          <span>{`${noticeArticle.uploadDate} ${noticeArticle.uploadTime}`}</span>
+          <span
+            className={styles.time_info}
+          >{`${noticeArticle.uploadDate} ${noticeArticle.uploadTime}`}</span>
         </div>
         <div className={styles.name}>
           <span>{noticeArticle.uploader}</span>
