@@ -1,62 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
 const Header = ({ logout, userData }) => {
   const history = useHistory();
 
+  const [toggle, setToggle] = useState(false);
+
   const goHome = () => {
+    setToggle(false);
     history.push("/");
     window.scrollTo({ top: 0 });
   };
 
   const goIntro = () => {
+    setToggle(false);
     history.push("/intro");
     window.scrollTo({ top: 0 });
   };
 
   const goNotice = () => {
+    setToggle(false);
     history.push("/notice");
     window.scrollTo({ top: 0 });
   };
 
   const goItemList = () => {
+    setToggle(false);
     history.push("/itemlist");
     window.scrollTo({ top: 0 });
   };
 
-  const goEvent = () => {
-    history.push("/event");
-    window.scrollTo({ top: 0 });
-  };
-
   const goBBS = () => {
+    setToggle(false);
     history.push("/bbs");
     window.scrollTo({ top: 0 });
   };
 
   const goCustomerCenter = () => {
+    setToggle(false);
     history.push("/customer");
     window.scrollTo({ top: 0 });
   };
 
   const goLogin = () => {
+    setToggle(false);
     history.push("/login");
     window.scrollTo({ top: 0 });
   };
 
   const goLogout = () => {
+    setToggle(false);
     logout();
   };
 
   const goMyPage = () => {
     if (userData.id) {
+      setToggle(false);
       history.push(`/mypage/${userData.id}`);
       window.scrollTo({ top: 0 });
     } else {
       history.push("/");
       window.alert("로그인 후에 사용해주세요.");
     }
+  };
+
+  const clickToggle = () => {
+    setToggle(!toggle);
   };
 
   return (
@@ -68,7 +78,7 @@ const Header = ({ logout, userData }) => {
           className={styles.image}
         />
       </div>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${toggle ? styles.on : styles.off}`}>
         <li className={styles.item} onClick={goHome}>
           홈
         </li>
@@ -92,7 +102,7 @@ const Header = ({ logout, userData }) => {
           고객지원
         </li>
       </ul>
-      <div className={styles.buttons}>
+      <div className={`${styles.buttons} ${toggle ? styles.on : styles.off}`}>
         <button
           className={`${styles.loginButton} ${
             userData && (userData.id ? styles.onlogin : styles.onlogout)
@@ -114,6 +124,9 @@ const Header = ({ logout, userData }) => {
           </button>
         </div>
       </div>
+      <button className={styles.toggle} onClick={clickToggle}>
+        <i className="fas fa-bars"></i>
+      </button>
     </section>
   );
 };

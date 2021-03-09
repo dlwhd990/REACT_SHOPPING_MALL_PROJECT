@@ -10,3 +10,13 @@
   height: 40rem;
   outline: none;
 }
+
+@media screen and (max-width: 49rem) {
+  .slider {
+    height: 20rem;
+  }
+
+  .image {
+    height: 20rem;
+  }
+}

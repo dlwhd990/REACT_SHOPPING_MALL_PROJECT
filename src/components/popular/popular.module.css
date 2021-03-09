@@ -36,3 +36,14 @@
   justify-content: center;
   margin-bottom: 3rem;
 }
+
+@media screen and (max-width: 49rem) {
+  .info {
+    padding-top: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .list {
+    margin-bottom: 0;
+  }
+}

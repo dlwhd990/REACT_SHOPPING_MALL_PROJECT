@@ -66,8 +66,23 @@
   box-shadow: 0 0 2px 0 lightgray;
 }
 
-@media screen and (max-width: 62rem) {
+@media screen and (max-width: 49rem) {
   .container {
+    width: 90%;
+    margin-top: 6rem;
+    margin-bottom: 15rem;
+  }
+
+  .board {
     width: 100%;
+  }
+
+  .bottom {
+    width: 100%;
+  }
+
+  .write {
+    font-size: 0.9rem;
+    width: 9rem;
   }
 }

@@ -17,11 +17,15 @@
   justify-content: center;
   white-space: nowrap;
 }
+
 .select_list {
   margin: 3rem 0;
 }
 
 .select {
+  width: 4rem;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   padding: 0.3rem;
   margin: 1rem 2rem 0 2rem;
@@ -40,4 +44,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media screen and (max-width: 49rem) {
+  .itemListPage {
+    width: 100%;
+  }
+  .quickMenu {
+    display: none;
+  }
+
+  .container {
+    margin: 0;
+    margin-top: 4.5rem;
+  }
+
+  .select_list {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

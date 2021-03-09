@@ -1,8 +1,5 @@
-@value color_skyBlue,color_pink,color_white,color_Con from '../../common/colors.css';
-
 .header {
   width: 100%;
-  height: 4.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +11,7 @@
 }
 
 .logo {
-  padding-left: 2rem;
+  padding: 1.04rem 0 1.04rem 2rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -113,14 +110,58 @@
   display: block;
 }
 
+.toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 49rem) {
   .header {
     flex-direction: column;
   }
 
+  .logo {
+    padding-left: 1rem;
+  }
+
   .list {
-    position: static;
+    width: 100%;
     flex-direction: column;
     align-items: center;
+  }
+
+  .item {
+    border: none;
+    padding: 0.35rem 0;
+  }
+
+  .buttons {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .loginButton {
+    margin: 0;
+  }
+
+  .toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+  }
+
+  .list.off {
+    display: none;
+  }
+
+  .buttons.off {
+    display: none;
   }
 }

@@ -40,3 +40,22 @@
 .time_info {
   font-size: 0.9rem;
 }
+
+@media screen and (max-width: 49rem) {
+  .article {
+    font-size: 0.8rem;
+  }
+
+  .time_info {
+    font-size: 0.8rem;
+  }
+
+  .time {
+    width: 5rem;
+  }
+
+  .name {
+    width: 5rem;
+    font-size: 0.8rem;
+  }
+}

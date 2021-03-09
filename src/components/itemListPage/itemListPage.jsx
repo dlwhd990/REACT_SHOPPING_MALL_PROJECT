@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ItemPreview from "../itemPreview/itemPreview";
 import QuickMenu from "../quickMenu/quickMenu";
