@@ -42,7 +42,7 @@ REACT Hook / REACT Router / CSS / HTML / Firebase / slick-carousel
    > ![intro](./mdimage/intro.gif)
    >
    > 카카오 프렌즈에 대한 간단한 소개를 볼 수 있는 페이지입니다! \
-   > 8명의 캐릭터를 각자의 고유 색을 배경으로 하여 사용자로 하여금 친밀감을 유도하고 클릭 시 간단한 소개를 볼 수 있는 modal창이 팝업됩니다.
+   > 8명의 캐릭터를 각자의 고유 색을 배경으로 하여 사용자로 하여금 친밀감을 유도하고 클릭 시 간단한 소개를 볼 수 있는 창이 보여지게됩니다.
 
 <br/>
 <br/>
@@ -182,6 +182,10 @@ REACT Hook / REACT Router / CSS / HTML / Firebase / slick-carousel
 
 2. 구현되지 못한 부분들\
    방학이 되면 다시 시작할 예정입니다.
+
+<br/>
+<br/>
+<br/>
 
 ### `앞으로 추가할 예정인 기능들(여름방학)`
 
