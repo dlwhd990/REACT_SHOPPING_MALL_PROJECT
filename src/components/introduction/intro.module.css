@@ -162,10 +162,12 @@
 @media screen and (max-width: 49rem) {
   .title {
     font-size: 1.8rem;
+    margin-top: 6rem;
     margin-bottom: 1.5rem;
   }
   .info_box {
     height: 100%;
+    margin-bottom: 3rem;
   }
   .top,
   .bottom {

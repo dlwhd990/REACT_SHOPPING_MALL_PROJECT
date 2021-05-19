@@ -1,22 +1,24 @@
 .noticeView {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8rem 0;
 }
 
 .container {
+  width: 40%;
   border: 2px solid lightgray;
-  width: 45%;
   padding: 2rem;
+  margin: 8rem 0;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.uploader {
+  width: 6.5rem;
 }
 
 .userdata {
@@ -76,4 +78,10 @@
 .content {
   word-wrap: break-word;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 49rem) {
+  .container {
+    width: 90%;
+  }
 }

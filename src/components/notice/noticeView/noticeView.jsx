@@ -21,7 +21,7 @@ const NoticeView = ({ userData, notices, noticeRepository }) => {
     );
     if (popup) {
       noticeRepository.removeNotice(id);
-      history.push("/bbs");
+      history.push("/notice");
     }
   };
 

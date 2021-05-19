@@ -95,10 +95,6 @@ const App = ({
   }, [authService.check()]);
 
   useEffect(() => {
-    console.log(inherentId);
-  });
-
-  useEffect(() => {
     userDataRepository.getUserData(inherentId, setUser);
   }, [inherentId]);
 

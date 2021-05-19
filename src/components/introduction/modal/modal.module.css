@@ -65,11 +65,9 @@
     width: 90%;
   }
 
-  .image_box {
-    padding: 15rem 2rem 0 2rem;
-  }
   .image {
     width: 8rem;
+    height: 8rem;
   }
 
   .info {
@@ -87,6 +85,10 @@
     padding: 1rem;
     overflow-y: auto;
     position: relative;
+  }
+
+  .image_box {
+    padding: 15rem 2rem 0 2rem;
   }
 
   .close {
