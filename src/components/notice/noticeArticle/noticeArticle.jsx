@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Article from "../../BBS/article";
 import styles from "./noticeArticle.module.css";
 
 const NoticeArticle = ({ noticeArticle }) => {
@@ -9,16 +10,10 @@ const NoticeArticle = ({ noticeArticle }) => {
     window.scrollTo({ top: 0 });
     history.push(`/noticearticleview/${noticeArticle.id}`);
   };
-  let convertedTitle;
-  if (noticeArticle.title.length > 35) {
-    convertedTitle = noticeArticle.title.slice(0, 35) + "...";
-  } else {
-    convertedTitle = noticeArticle.title;
-  }
 
   return (
     <section className={styles.noticeArticle} onClick={viewNoticeArticle}>
-      <span className={styles.title}>{convertedTitle}</span>
+      <span className={styles.title}>{noticeArticle.title}</span>
       <div className={styles.data}>
         <div className={styles.time}>
           <span

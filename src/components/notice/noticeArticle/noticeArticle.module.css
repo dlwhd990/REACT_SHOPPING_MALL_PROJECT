@@ -12,7 +12,11 @@
 }
 
 .title {
-  padding-left: 1rem;
+  padding: 0 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -moz-white-space: nowrap;
+  overflow: hidden;
 }
 
 .data {
@@ -36,10 +40,6 @@
   padding: 1.2rem 0;
   text-align: center;
   font-size: 0.9rem;
-}
-
-span {
-  padding: 0;
 }
 
 @media screen and (max-width: 49rem) {
