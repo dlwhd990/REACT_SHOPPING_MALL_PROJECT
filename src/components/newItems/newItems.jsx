@@ -5,6 +5,8 @@ import styles from "./newItems.module.css";
 
 const NewItems = ({ items, itemList }) => {
   const history = useHistory();
+  console.log(items);
+  console.log(itemList);
 
   const itemView = (item) => {
     history.push(`/itemview/${item.id}`);

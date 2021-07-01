@@ -18,6 +18,7 @@ const Bbs = ({ articles, authService }) => {
   };
 
   const articleList = Object.keys(articles).reverse();
+  console.log(articleList);
 
   let pagelength = 0;
 
